@@ -1,8 +1,14 @@
 #board {
   margin-top: 10px;
+  background-color: white;
 }
 
 .box {
   border: 1px solid black;
   height: 150px;
+}
+
+.btn {
+  margin-top: 10px;
+  width: 9em;
 }
