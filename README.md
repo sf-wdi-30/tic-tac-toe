@@ -38,7 +38,7 @@ Remind yourself how tic-tac-toe works by playing a few games with a classmate.
 
 1. Fork this repository to create a copy on your GitHub account.
 
-1. Clone the tic-tac-toe repository from *your GitHub account* into your `wdi` folder to create a local copy on your computer.
+1. Clone the tic-tac-toe repository from *your GitHub account* into your development folder to create a local copy on your computer.
 
 2. Use `index.html` as your starting point on this project. There is already some starter code in `index.html`, `css/style.css`, and `js/app.js`.
 
