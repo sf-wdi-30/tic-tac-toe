@@ -12,14 +12,28 @@ var turnCounter = 0; //maximum of 9 turns
     });
     $(".box").on("click", function insertX(e){
       if (turnCounter % 2 === 0){ //adds value of x or o to each box and changes text
+        if ($("div").hasClass(".took")){
+          $(this).on("click", function dontClick(event){
+            $(this).preventDefault(); // ask TAs
+            alert("Can't move here");
+          });
+        }
         $(this).val("x");
         $(this).text("x");
+        $(this).addClass("took");
       }
-      else {
+      else if (turnCounter % 2 === 1){
+        if ($(".took")) {
+          $(this).on("click", function dontClick(event){
+            event.preventDefault();
+            alert("Can't move here");
+          });
         $(this).val("o");
         $(this).text("o");
-      }
+        $(this).addClass("took");
+        }
 
+      }
     });
     $(".box").on("click", function changeColor(event){ //changesColor of each box
       if ($(this).val() === "x"){ //changes color to blue if box value is x, red if o
@@ -29,6 +43,11 @@ var turnCounter = 0; //maximum of 9 turns
         $(this).css('background-color', ("red"));
       }
     turnCounter++;
+
+    if ($(".1stbox").val() && $(".2ndbox").val() && $(".3rdbox").val() === "o"){ // ask TAs
+      alert("X wins!");
+    }
+
     });
 
     //
@@ -39,10 +58,7 @@ var turnCounter = 0; //maximum of 9 turns
     // }
 // //conditional statement that will stop the player from using a taken square
 //     // if($(this).val("x")){
-//     //   $(this).on("click", function dontClick(event){
-//     //     event.preventDefault();
-//     //     alert("Can't move here");
-//     //   });
+
 //     // }
 // var board = 0;
 // $('.row').find('.box').click(
