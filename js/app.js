@@ -1,12 +1,12 @@
 // wait for the DOM to finish loading
-  console.log("this is a sanity check");
+
 $(document).ready(function() {
   // all code to manipulate the DOM
   // goes inside this function
 
-
-
-  console.log("Let's get coding!");
+  $('.box').on("click", function(){
+    $(this).append('<img src="tacocat.png" height="64px" width="64px">');
+  });
 
 // var x = console.log('sanity check');
 // function xWins {
