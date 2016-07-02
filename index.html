@@ -8,12 +8,13 @@
 
     <!-- Bootstrap CSS from CDN -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-
+    <link rel="stylesheet" href="css/style.css" charset="utf-8">
     <!-- link to custom stylesheet (always require after Bootstrap) -->
 
     <!-- jQuery from CDN -->
+      <script <script   src="https://code.jquery.com/jquery-3.0.0.js"   integrity="sha256-jrPLZ+8vDxt2FnE1zvZXCkCcebI/C8Dt5xyaQBjxQIo="   crossorigin="anonymous"></script>>
 
-
+      </script>
     <!-- link to custom javascript file (always require after external JS libraries) -->
 
     <title>Tic Tac Toe</title>
@@ -35,12 +36,22 @@
           <!-- you can put rows inside of columns! -->
           <!-- Bootstrap subdivides these 'nested' rows into 12 columns, too! -->
           <div class="row">
-            <div class="col-md-4 box">a</div>
-            <div class="col-md-4 box">a</div>
-            <div class="col-md-4 box">a</div>
+            <div class="col-md-4 box topLeft">a</div>
+            <div class="col-md-4 box topMiddle">b</div>
+            <div class="col-md-4 box topRight">c</div>
           </div>
 
+          <div class="row">
+            <div class="col-md-4 box middleLeft">a</div>
+            <div class="col-md-4 box middleMiddle">a</div>
+            <div class="col-md-4 box middleRight">a</div>
+          </div>
 
+          <div class="row">
+            <div class="col-md-4 box bottomLeft">a</div>
+            <div class="col-md-4 box bottomMiddle">a</div>
+            <div class="col-md-4 box bottomRight">a</div>
+          </div>
 
         </div>
       </div>
