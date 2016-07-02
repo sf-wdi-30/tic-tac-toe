@@ -3,10 +3,18 @@
 $(document).ready(function() {
   // all code to manipulate the DOM
   // goes inside this function
+  var turnCount = 0;
 
-  $('.box').on("click", function(){
-    $(this).append('<img src="tacocat.png" height="64px" width="64px">');
+  $('.box').on("click", function input() {
+    if (turnCount % 2 === 0) {
+      $(this).append('<img src="tacocat.png" height="150px" width="150px">');
+    } else {
+      $(this).append('<img src="pizzacat.png" height="150px" width="150px">');
+    } turnCount++;
   });
+
+
+
 
 // var x = console.log('sanity check');
 // function xWins {
@@ -27,7 +35,6 @@ $(document).ready(function() {
 //   .on("click", function(e)) {
 //     $().append();
 //   }
-
 
 
 });
