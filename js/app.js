@@ -11,11 +11,34 @@ var board = 0; //default value of board set to zero
         function(){
           if(board%2 === 0){ // if board % 2 === 0 draw "X" --> true
             $(this).text("X");
+            $(this).val("X");
           } else{ // if board % 2 === 0 draw "O"
             $(this).text("O");
+            $(this).val("O");
           }
           board++; // board + 1
-      });
+        });
+
+$('.box').click(function fillbox(){
+  if($(this).val() === "X"){
+    $(this).css('background-color', ("blue"));
+  } else {
+    $(this).css('background-color', ("green"));
+  }
+});
+    //  $('.box').click( function fillBox(){
+      //      if($(this).text === "X"); {
+      //        $(this).css('background-color', player1);
+          //  } else {
+      //       $(this).css('background-color', player2);
+
+      //   }
+
+
+      //      $(this).css('background-color', player2)
+      //  });
+
+
 
 
 
@@ -32,7 +55,7 @@ var board = 0; //default value of board set to zero
 
 
 // how to prevent the player from choosing a previously claimed box
-      //preventDefault();
+
 // how to reset the game and clear the board
       $('.btn').on("click", function handleClick(e){ // how to reset the game
         alert("Reset!");
