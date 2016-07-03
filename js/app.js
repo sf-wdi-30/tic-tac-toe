@@ -1,8 +1,21 @@
 // wait for the DOM to finish loading
+
 $(document).ready(function() {
-$('#board div div').on('click', function(event) {
-$(this).css('background-image', 'url("img/xIcon.png")');
-// $(this).css('background-color', 'blue');
-  //%(this).attr()
+  var xIcon = ('url("img/xIcon.png")');
+  var oIcon = ('url("img/oIcon.png")');
+  var playerIcon = oIcon;
+  var playerSwitch = function() {
+    if (playerIcon === xIcon) {
+      playerIcon = oIcon;
+    }
+    else {
+      playerIcon = xIcon;
+    }
+  };
+  $('#board div div').on('click', function(event) {
+  playerSwitch();
+  $(this).css('background-image', playerIcon);
+  // $(this).css('background-color', 'blue');
+    //%(this).attr()
 });
 });
