@@ -3,27 +3,54 @@
 $(document).ready(function() {
   // all code to manipulate the DOM
   // goes inside this function
-  var turnCount = 0;
 
+// Variables
+  var turnCount = 0;
   var tacoCat = '<img src="tacocat.png" height="150px" width="150px">';
   var pizzaCat = '<img src="pizzacat.png" height="150px" width="150px">';
+  var $gridSpace = $('.box');
 
-  $('.box').on("click", function input() {
-    if($(this).html()=== "") {
+
+  var winPosition = [
+    [0,1,2],
+    [3,4,5],
+    [6,7,8],
+    [0,3,6],
+    [1,4,7],
+    [2,5,8],
+    [0,4,8],
+    [2,4,6],
+  ];
+
+  var occupiedPosition = {
+    'x': [],
+    'o': []
+  };
+
+  var playingNow = 'x';
+
+  $gridSpace.on("click", function(){
+    var $selectBox = $(this);
+    if($selectBox.html()==="") {
       if (turnCount % 2 === 0) {
-        $(this).html(tacoCat);
+        playingNow = 'x';
+        $selectBox.append(tacoCat);
       } else {
-        $(this).html(pizzaCat);
-      } turnCount++;
-    } else if ($(this).html()!== "") {
+        playingNow = 'o';
+        $selectBox.append(pizzaCat);
+      }
+      $selectBox.addClass(playingNow);
+      turnCount++;
+    } else if ($selectBox.html()!=="") {
       alert ('occupied by another cat');
     }
   });
 
 
-  $('.reset').on("click", function(){
-    $('.btn').append('');
-  });
+  // New Game
+    $('.reset').on("click", function(){
+      $('.btn').append('');
+    });
 
 
 });
