@@ -3,10 +3,12 @@
 }
 
 .box {
+  background-color: white;
   border: 3px solid black;
   height: 150px;
   background-size: cover;
   color: transparent;
+
 }
 
 .alert{
@@ -19,7 +21,10 @@
 }
 
 .jumbotron{
-  background-color: rgb(242, 199, 240, 3);
+  background-color: #E8A0E5;
+  background-image: url("https://berkeleyhumane.org/files/galleries/HomeBanner_4-0001.jpg");
+  background-size: cover;
+  border-bottom: 2px black solid;
 }
 
 .btn {
@@ -30,4 +35,23 @@
 .reset  {
   display: table;
   margin: 0 auto;
+}
+
+
+.hover  {
+  background-color: rgba(105, 57, 37, 0.5);
+}
+
+body {
+  background: rgb(212, 198, 171);
+}
+
+h1 {
+
+  text-shadow: 1px 1px 2px black;
+}
+
+h3 {
+
+  text-shadow: 1px 1px 2px black;
 }
