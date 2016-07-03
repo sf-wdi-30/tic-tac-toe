@@ -19,7 +19,7 @@ $(document).ready(function() {
     $("div").removeClass('filled');
   });
 
-  $('#board div div').on('click', function(event) {
+  $('#board').on('click', "div div", function(event) {
     if ($(this).hasClass('filled')) {
 
     }
