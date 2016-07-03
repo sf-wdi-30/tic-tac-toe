@@ -22,8 +22,14 @@ $(document).ready(function() {
           }
       $(this).addClass("took");
       turnCounter++;
+        if((turnCounter%2) === 1){
+          alert("O's turn");
+        }
+        else{
+        alert("X's turn")
+        }
       }
-// checking for winner 
+// checking for winner
       if ($(".1stbox").val() === "o" && $(".2ndbox").val() === "o" && $(".3rdbox").val() === "o"){ // ask ryan
         alert("o wins!");
       }
