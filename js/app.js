@@ -1,10 +1,24 @@
 // wait for the DOM to finish loading
+var tictactoe; (function()){
+  var x= "X";
+  var O= "O";
+  BLANK= " ";
+};
+
 $(document).ready(function() {
-  // all code to manipulate the DOM
-  // goes inside this function
-$(".col-md-4").on("click",function(e)){
+
+$(".col-md-4").on("click",function(e){
   $(this).css("background", "blue");
-});
+  });
+
+
+
+
+
+
+
+
+
 
 
 
@@ -13,3 +27,4 @@ $(".col-md-4").on("click",function(e)){
 });
 
 console.log("hi")
+//sanity check (okay!)
