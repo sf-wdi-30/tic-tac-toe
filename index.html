@@ -2,7 +2,6 @@
 <html>
   <head>
     <meta charset="utf-8">
-
     <!-- set viewport to device width to allow responsiveness -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -15,39 +14,40 @@
 <script src="https://code.jquery.com/jquery-3.0.0.js" integrity="sha256-jrPLZ+8vDxt2FnE1zvZXCkCcebI/C8Dt5xyaQBjxQIo=" crossorigin="anonymous"></script>
     <!-- link to custom javascript file (always require after external JS libraries) -->
 <script src= js/app.js></script>
-    <title>Tic Tac Toe</title>
+    <title>Tic Tac Taco</title>
   </head>
   <body>
-    <div class="gameboard">
-      <div class="row text-center">
-        <div class="col-md-12">
-          <h1>Tic Tac Toe</h1>
 
-          <div class="message">Current Player: X</div>
-          <button class="play-again">Play Again</button>
+    <div class="gameboard">
+
+      <div class="row text-center">
+
+        <div class="col-md-12">
+
+          <h1>Tic Tac Taco</h1>
+
         </div>
       </div>
       <div class="row">
-        <!-- a column represents our game board -->
-        <!-- the `offset` class helps us center the board -->
-        <div class="col-md-6 col-md-offset-3" id="board">
-          <!-- you can put rows inside of columns! -->
-          <!-- Bootstrap subdivides these 'nested' rows into 12 columns, too! -->
+        <div class="col-md-6 col-md-offset-3" id="gameboard">
           <div class="row">
-            <div id='1' class="col-md-4 box">a</div>
-            <div id='2' class="col-md-4 box">a</div>
-            <div id='3' class="col-md-4 box">a</div>
+            <div id='1' class="col-md-4 box"></div>
+            <div id='2' class="col-md-4 box"></div>
+            <div id='3' class="col-md-4 box"></div>
           </div>
+
           <div class="row">
-            <div id='4' class="col-md-4 box">a</div>
-            <div id='5' class="col-md-4 box">a</div>
-            <div id='6' class="col-md-4 box">a</div>
+            <div id='4' class="col-md-4 box"></div>
+            <div id='5' class="col-md-4 box"></div>
+            <div id='6' class="col-md-4 box"></div>
           </div>
+
           <div class="row">
-            <div id='7' class="col-md-4 box">a</div>
-            <div id='8' class="col-md-4 box">a</div>
-            <div id='9' class="col-md-4 box">a</div>
+            <div id='7' class="col-md-4 box"></div>
+            <div id='8' class="col-md-4 box"></div>
+            <div id='9' class="col-md-4 box"></div>
           </div>
+          
         </div>
       </div>
     </div>
