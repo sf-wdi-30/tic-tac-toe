@@ -13,8 +13,8 @@ $(document).ready(function() {
     }
   };
   $('#board div div').on('click', function(event) {
-  playerSwitch();
   $(this).css('background-image', playerIcon);
+  playerSwitch();
   // $(this).css('background-color', 'blue');
     //%(this).attr()
 });
