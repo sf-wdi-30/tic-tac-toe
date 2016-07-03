@@ -21,4 +21,19 @@ else{
     $(this).addClass("took");
     playerTurn++;
   });
+
+////////reset button ////
+$('.reset').on('click', function(event) {
+ for (i = 0; i < 9; i++) {
+   $(".box").each (function (event) {
+     $(this).html(' ');
+     $(this).css('background-color' , 'white');
+     $(this).removeClass("took");
+   });
+ }
+});
+///////////////
+
+
+
 });
