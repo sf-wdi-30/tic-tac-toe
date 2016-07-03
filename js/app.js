@@ -12,13 +12,17 @@ $(document).ready(function() {
       playerIcon = xIcon;
     }
   };
+  var checkWin = function() {
+    
+  };
 
+  //reset button
   $('button').on('click', function(event) {
-    console.log("The button was clicked!");
     $("div").css('background-image', "");
     $("div").removeClass('filled');
   });
 
+//draw event
   $('#board').on('click', "div div", function(event) {
     if ($(this).hasClass('filled')) {
 
