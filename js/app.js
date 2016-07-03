@@ -22,6 +22,8 @@ else{
     playerTurn++;
   });
 
+
+
 ////////reset button ////
 $('.reset').on('click', function(event) {
  for (i = 0; i < 9; i++) {
