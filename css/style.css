@@ -8,3 +8,26 @@
   background-size: cover;
   color: transparent;
 }
+
+.alert{
+  text-align: center;
+  margin-top: 3px;
+}
+
+.label{
+  width: 250px;
+}
+
+.jumbotron{
+  background-color: rgb(242, 199, 240, 3);
+}
+
+.btn {
+  display: block;
+  margin: auto;
+}
+
+.reset  {
+  display: table;
+  margin: 0 auto;
+}
