@@ -42,6 +42,16 @@
   background-color: rgba(105, 57, 37, 0.5);
 }
 
+.dog  {
+  background-image: url("https://www.petfinder.com/wp-content/uploads/2012/11/122163343-conditioning-dog-loud-noises-632x475.jpg");
+  background-size: cover;
+}
+
+.cat {
+  background-image: url("https://pixabay.com/static/uploads/photo/2014/03/29/09/17/cat-300572_960_720.jpg");
+  background-size: cover;
+}
+
 body {
   background: rgb(212, 198, 171);
 }

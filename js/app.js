@@ -14,10 +14,9 @@ $(document).ready(function(e) {
       $(this).text('X');
       didXWin();                 // Player X
       draw();
-      declareWinner();
       turn = false;
       finalCountDown += 1;    // do ~ do ~ do ~ dooo ~ do ~ do ~ do ~ do ~ dooo
-
+      console.log(e);
     }
 
     else {
@@ -26,7 +25,7 @@ $(document).ready(function(e) {
       $(this).text('O');
       didOWin();                // Player O
       draw();
-      declareWinner();
+
       turn = true;
       finalCountDown += 1;     // do ~ do ~ do ~ dooo ~ do ~ do ~ do ~ do ~ dooo
     }
@@ -107,36 +106,35 @@ function draw(){
   }
 }
 
+
+
 var $board;
-var a = [["X", "X", "X"], ["O", "O", "O"]];
+var whoWon;
+var turn = true;
+var draw = 0;
 
- function boo() {
-   $board = [ [ $('.topLeft').text(), $('.topMiddle').text(), $('.topRight').text()] ,
-               [ $('.middleLeft').text(), $('.middleMiddle').text(), $('.middleRight').text()] ,
-               [ $('.bottomLeft').text(), $('.bottomMiddle').text(), $('.bottomRight').text()] ,
+$('.box').on('click', function(){
 
-               [ $('.topLeft').text(), $('.middleLeft').text(), $('.bottomLeft').text()] ,
-               [ $('.topMiddle').text(), $('.middleMiddle').text(), $('.bottomMiddle').text()] ,
-               [ $('.topRight').text(), $('.middleRight').text(), $('.bottomRight').text()],
-
-               [ $('.topLeft').text(), $('.middleMiddle').text(), $('.bottomRight').text()],
-               [ $('.topRight').text(), $('.middleMiddle').text(), $('.topLeft').text()]
-             ];
+});
+ function setBoard() {
+   $board = [  [ $('.topLeft').text(), $('.topMiddle').text(), $('.topRight').text()] ,               //Top Horizontal
+               [ $('.middleLeft').text(), $('.middleMiddle').text(), $('.middleRight').text()] ,     //Middle Horizontal
+               [ $('.bottomLeft').text(), $('.bottomMiddle').text(), $('.bottomRight').text()] ,    //Bottom Horizontal
+               [ $('.topLeft').text(), $('.middleLeft').text(), $('.bottomLeft').text()] ,          //Left Vertical
+               [ $('.topMiddle').text(), $('.middleMiddle').text(), $('.bottomMiddle').text()] ,    //Middle Vertical
+               [ $('.topRight').text(), $('.middleRight').text(), $('.bottomRight').text()],        //Right Vertical
+               [ $('.topLeft').text(), $('.middleMiddle').text(), $('.bottomRight').text()],        // Diagonal
+               [ $('.topRight').text(), $('.middleMiddle').text(), $('.topLeft').text()]            // Diagonal
+            ];
 }
 
-function winner(){
-  if(turn === true){
-    $board.forEach(function(){
-      if($(this).text() === "X", "X", "X"){
-        console.log("x wins!");
-      }
-    });
-  }
-  else{
-    $board.forEach(function(){
-      if($(this).text() === "O", "O", "O"){
-        console.log("o wins!");
-      }
-    });
-  }
+function winner() {
+$board.forEach(function(e){
+ if(e === "O", "O", "O"){
+   $('h3').text('Cat Wins!');
+ }                                      // I don't think forEach is the right thing to use here. It works for now though.
+ else if(e === "X", "X", "X"){
+   $('h3').text('Dog Wins!');
+ }
+});
 }
