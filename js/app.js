@@ -7,13 +7,15 @@ $(document).ready(function() {
   var playerSwitch = function() {
     if (playerIcon === xIcon) {
       playerIcon = oIcon;
+      $(this).addClass("x");
     }
     else {
       playerIcon = xIcon;
+      $(this).addClass("o");
     }
   };
   var checkWin = function() {
-    
+
   };
 
   //reset button
