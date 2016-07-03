@@ -14,15 +14,20 @@ $(document).ready(function() {
   };
 
   $('button').on('click', function(event) {
-    // event.preventDefault();
     console.log("The button was clicked!");
     $("div").css('background-image', "");
+    $("div").removeClass('filled');
   });
 
   $('#board div div').on('click', function(event) {
-  $(this).css('background-image', playerIcon);
-  playerSwitch();
+    if ($(this).hasClass('filled')) {
 
+    }
+      else {
+  $(this).css('background-image', playerIcon);
+  $(this).addClass("filled");
+  playerSwitch();
+}
   // $(this).css('background-color', 'blue');
   //   %(this).attr()
 });
