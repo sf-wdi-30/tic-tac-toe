@@ -40,19 +40,20 @@ $(document).ready(function() {
             turnAlert = "X";
             //$(this).css('background-color', ("red"));
           }
-
+          $(this).addClass("took"); // adds took class to the square most recently played
       //winChecker();
-      if(winChecker()){ // conditional statement checking for win or draw. if either is true execution will stop
-        return true;
+        if(winChecker()){ // conditional statement checking for win or draw. if either is true execution will stop
+          return true;
+        }
+        else if(turnCounter === 8){ // if all spots are full, draw
+          alert("DRAW");
+        }
+        else{
+          alert(turnAlert + "'s turn"); //added turn alert to the end of conditional statement to prevent excess alerts
+        }
       }
-      else if(turnCounter === 8){ // if all spots are full, draw
-        alert("DRAW");
-      }
-      
-      $(this).addClass("took"); // adds took class to each HTML element
       turnCounter++;
-      alert(turnAlert + "'s turn");
-      }
+
     });
 
     $('.reset').on("click", function handleClick(e){ // reset button works by removing classes, values, and text
