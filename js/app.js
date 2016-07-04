@@ -129,13 +129,17 @@ function checkWin(condition) {
         var testString = testArray.toString();
         if (testString === "x,x,x") {
         $('#board div div').addClass("filled");
-        alert("X Wins");
+        // alert("X Wins");
         turnCounter=0;
+        gameWon=1;
+        $('.alertDisplay').text("Player X Wins!");
         }
         else if (testString === "o,o,o") {
         $('#board div div').addClass("filled");
-        alert("O Wins");
+        // alert("O Wins");
         turnCounter=0;
+        gameWon=1;
+        $('.alertDisplay').text("Player O Wins!");
         }
         else {
         console.log("NOPE");
@@ -146,8 +150,14 @@ function checkWin(condition) {
 //**
 
 function displayTurn() {
-
+  if (playerIcon === oIcon) {
+    $('.alertDisplay').text("Player O's Turn");
+  }
+  else {
+    $('.alertDisplay').text("Player X's Turn");
+  }
 }
+
 
 // function checkFull {
 //   $('#board div div')
@@ -163,6 +173,7 @@ function displayTurn() {
 var xIcon = ('url("img/xIcon.png")');
 var oIcon = ('url("img/oIcon.png")');
 var turnCounter = 0;
+var gameWon = 0;
 
 //set starting player
 var playerIcon = oIcon;
@@ -177,11 +188,16 @@ var playerSwitch = function() {
 };
 
 $(document).ready(function() {
+displayTurn();
 
   //reset button
   $('button').on('click', function(event) {
     $("div").css('background-image', "");
     $("div").removeClass('filled');
+    $("div").attr('title', " ");
+    gameWon=0;
+    turnCounter=0;
+    displayTurn();
   });
 
 //draw event
@@ -210,12 +226,16 @@ $(document).ready(function() {
   checkWin($('.right'));
   checkWin($('.diag1'));
   checkWin($('.diag2'));
-  // checkFull();
-  // displayTurn();
   console.log(turnCounter);
+  if (gameWon===1){
+    console.log("test");
+  }
+  else {
+    displayTurn();
   if (turnCounter===9) {
     alert("Cat's Game!");
   }
+}
   console.log("done");
 }
 }

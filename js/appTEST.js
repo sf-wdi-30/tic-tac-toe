@@ -121,16 +121,62 @@
 //     console.log('element at index ' + index + ' is ' + value);
 // });
 
-var winConditions = ["'top'",
-// ".'middle'", ".'bottom'", "'left'", "'center'", "'right'", "'diag1'", "'diag2'"
-];
+function checkWin(condition) {
+    var testArray = [];
+    condition.each(function () {
+        testArray.push($(this).attr('title'));
+      });
+        var testString = testArray.toString();
+        if (testString === "x,x,x") {
+        $('#board div div').addClass("filled");
+        // alert("X Wins");
+        // turnCounter=0;
+        // gameWon=1;
+        $('.alertDisplay').text("Player X Wins!");
+        }
+        else if (testString === "o,o,o") {
+        $('#board div div').addClass("filled");
+        // alert("O Wins");
+        // turnCounter=0;
+        // gameWon=1;
+        $('.alertDisplay').text("Player O Wins!");
+        }
+        else {
+        console.log("NOPE");
+        }
+}
+//**
+// FOR LATER: RETURN A FUNCTION INSTEAD OF ALERT win(x) or win(y)
+//**
+
+function displayTurn() {
+  if (playerIcon === oIcon) {
+    $('.alertDisplay').text("Player O's Turn");
+  }
+  else {
+    $('.alertDisplay').text("Player X's Turn");
+  }
+}
+
+
+// function checkFull {
+//   $('#board div div')
+//   if ($(this).hasClass('filled'))
+// }
+
+
+// failed experiment with for loop for iterating on winCondition();
+// winConditions = ["$(.'top')",
+// // ".'middle'", ".'bottom'", "'left'", "'center'", "'right'", "'diag1'", "'diag2'"
+// ];
 
 var xIcon = ('url("img/xIcon.png")');
 var oIcon = ('url("img/oIcon.png")');
+var turnCounter = 0;
+var gameWon = 0;
+
 //set starting player
 var playerIcon = oIcon;
-// //test
-// var topRow = $('.top').hasClass();
 //switch player function
 var playerSwitch = function() {
   if (playerIcon === xIcon) {
@@ -140,63 +186,25 @@ var playerSwitch = function() {
     playerIcon = xIcon;
   }
 };
-//
-function checkWin(value) {
-    var testArray = [];
-    var testArg = "."+value;
-    console.log(testArg);
-    // console.log(condition);
-    // var test7 = condition;
-    $(.'top').each(function () {
-        testArray.push($(this).attr('title'));
-      });
-        var testString = testArray.toString();
-        if (testString === "x,x,x") {
-        alert("X Wins");
-        }
-        else if (testString === "o,o,o") {
-        alert("O Wins");
-        }
-        else {
-        console.log("NOPE");
-        }
-}
-
-// function checkWin(condition) {
-//     var testArray = [];
-//     console.log(condition);
-//     var test7 = condition;
-//     for (i=0; i < test7.length-1; i++) {
-//         testArray.push(test7.eq(i).attr('title'));
-//       }
-//         var testString = testArray.toString();
-//         if (testString === "x,x,x") {
-//         alert("X Wins");
-//         }
-//         else if (testString === "o,o,o") {
-//         alert("Y Wins");
-//         }
-//         else {
-//         console.log("NOPE");
-//         }
-// }
-//**
-// FOR LATER: RETURN A FUNCTION INSTEAD OF ALERT win(x) or win(y)
-//**
 
 $(document).ready(function() {
+// displayTurn();
 
   //reset button
   $('button').on('click', function(event) {
     $("div").css('background-image', "");
     $("div").removeClass('filled');
+    // gameWon=0;
+    // turnCounter=0;
+    // displayTurn();
   });
 
 //draw event
   $('#board').on('click', "div div", function(event) {
-    if ($(this).hasClass('filled')) {
+    if ((($(this).hasClass('filled'))) || (turnCounter===10)) {
     }
-      else {
+    else {
+  turnCounter += 1;
   $(this).css('background-image', playerIcon);
   $(this).addClass("filled");
   if (playerIcon === (xIcon)) {
@@ -208,16 +216,29 @@ $(document).ready(function() {
     $(this).attr('title', "o");
   }
   playerSwitch(this);
-
-  checkWin(winConditions[0]);
-  // // checkWin($('.top'));
-  // for (var i = 0; i < winConditions.length; i++) {
-  // console.log(winConditions[0]);
-  // checkWin(winConditions[0]);
-  // }
+  //brute force solution; I tried a dozen different methods to put this in a for loop, but jQuery refused to accept the variable
+  checkWin($('.top'));
+  checkWin($('.middle'));
+  checkWin($('.bottom'));
+  checkWin($('.left'));
+  checkWin($('.center'));
+  checkWin($('.right'));
+  checkWin($('.diag1'));
+  checkWin($('.diag2'));
+  console.log(turnCounter);
+//   if (gameWon===1){
+//     console.log("test");
+//   }
+//   else {
+//     displayTurn();
+//   if (turnCounter===9) {
+//     alert("Cat's Game!");
+//   }
+// }
   console.log("done");
 }
-});
+}
+);
 });
 
 // $(this).css('background-color', 'blue');
