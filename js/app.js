@@ -186,6 +186,13 @@ $(document).ready(function() {
   }
   playerSwitch(this);
   checkWin($('.top'));
+  checkWin($('.middle'));
+  checkWin($('.bottom'));
+  checkWin($('.left'));
+  checkWin($('.center'));
+  checkWin($('.right'));
+  checkWin($('.diag1'));
+  checkWin($('.diag2'));
   // for (var i = 0; i < winConditions.length; i++) {
   //     checkWin(winConditions[i]);
   // }
