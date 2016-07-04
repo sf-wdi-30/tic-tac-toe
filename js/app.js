@@ -124,8 +124,17 @@ function checkWin() {
     var testArray = [];
     $('.top').each(function () {
         testArray.push($(this).attr('title'));
-        console.log(testArray);
-    });
+      });
+        var testString = testArray.toString();
+        if (testString === "x,x,x") {
+        console.log("X Wins");
+        }
+        else if (testString === "o,o,o") {
+          console.log("Y Wins");
+        }
+        else {
+          console.log("NOPE");
+        }
 }
 var xIcon = ('url("img/xIcon.png")');
 var oIcon = ('url("img/oIcon.png")');
@@ -169,7 +178,5 @@ $(document).ready(function() {
   }
   playerSwitch(this);
 }
-  // $(this).css('background-color', 'blue');
-  //   %(this).attr()
 });
 });
