@@ -14,14 +14,21 @@ var player = 1;
           alert("This box is taken!");
       } else {
           if(player === 1) {
-            boxClicked.addClass("ex");
-            player = 2;
-         } else {
-            boxClicked.addClass("oh");
-            player = 1;
+            boxClicked.addClass("ex"); //player X
+            if (checkWin("ex")) {
+                alert("Winner!");
+            } else {
+              player = 2;
+              }
+          } else {
+            boxClicked.addClass("oh"); //player O
+            if (checkWin("ex")) {
+                alert("Winner!");
+            } else {
+              player = 1; //if not won.. pass to player 1... (does this make sense?)
            }
-
-      }
+         }
+      
     });
 //Check if someone won?--- create function that checks symbol X or O? ('ex' and 'oh')...
 //list ALL winning possibilities? (check to see if works)
@@ -34,6 +41,15 @@ var player = 1;
       return true;
 
     } else if ($("#7").hasClass(symbol) && $("#8").hasClass(symbol) && $("#9").hasClass(symbol)) {
+    } else {
+//Vertical
+    }if($("#1").hasClass(symbol) && $("#4").hasClass(symbol) && $("#7").hasClass(symbol)) {
+      return true;
+
+    }  else if ($("#2").hasClass(symbol) && $("#5").hasClass(symbol) && $("#8").hasClass(symbol)) {
+      return true;
+
+    } else if ($("#3").hasClass(symbol) && $("#6").hasClass(symbol) && $("#9").hasClass(symbol)) {
     } else {
         return false;
     }
