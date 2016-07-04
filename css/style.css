@@ -1,11 +1,92 @@
+body {
+  background-color: black;
+  color:white;
+  font-family: 'Oswald', sans-serif;
+  text-align: center;
+}
+
+
+h1 {
+  font-size: 5em;
+}
+
+h2 {
+  font-size:3m
+}
+.beyonce {
+    position:fixed;
+    bottom:0px;
+    left:0%;
+    }
+
+button {
+  margin:0, auto;
+}
+
 #board {
   margin-top: 10px;
 }
 
 .box {
-  border: 1px solid black;
+  border: 1px solid white;
   height: 150px;
   background-size: 60%;
   background-position: center;
   background-repeat: no-repeat;
+}
+
+#top-left {
+  border-top-style: none;
+  border-right-style: solid;
+  border-bottom-style: solid;
+  border-left-style: none;
+}
+
+#middle-left {
+  border-top-style: solid;
+  border-right-style: solid;
+  border-bottom-style: solid;
+  border-left-style: none;
+}
+
+#bottom-left {
+  border-top-style: solid;
+  border-right-style: solid;
+  border-bottom-style: none;
+  border-left-style: none;
+}
+
+#bottom-center {
+  border-top-style: solid;
+  border-right-style: solid;
+  border-bottom-style: none;
+  border-left-style: solid;
+}
+
+#bottom-right {
+  border-top-style: solid;
+  border-right-style: none;
+  border-bottom-style: none;
+  border-left-style: solid;
+}
+
+#middle-right {
+  border-top-style: solid;
+  border-right-style: none;
+  border-bottom-style: solid;
+  border-left-style: solid;
+}
+
+#top-right {
+  border-top-style: none;
+  border-right-style: none;
+  border-bottom-style: solid;
+  border-left-style: solid;
+}
+
+#top-center {
+  border-top-style: none;
+  border-right-style: solid;
+  border-bottom-style: solid;
+  border-left-style: solid;
 }

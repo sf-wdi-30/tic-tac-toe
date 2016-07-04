@@ -2,26 +2,24 @@
 <html>
   <head>
     <meta charset="utf-8">
-
-    <!-- set viewport to device width to allow responsiveness -->
+    <!--set viewport-->
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <!-- Bootstrap CSS from CDN -->
+    <!--Bootstrap-->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-
-    <!-- link to custom stylesheet (always require after Bootstrap) -->
+    <!--Custom CSS-->
     <link rel="stylesheet" href="css/style.css" media="screen" title="no title" charset="utf-8">
-    <!-- jQuery from CDN -->
+    <!--jQuery-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
-    <!-- link to custom javascript file (always require after external JS libraries) -->
+    <!--Custom JS-->
     <script src = "js/app.js"></script>
-    <title>Tic Tac Toe</title>
+    <link href='https://fonts.googleapis.com/css?family=Oswald:400,700,300&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+    <title>XO - Beyonce Tic Tac Toe</title>
   </head>
   <body>
     <div class="container">
       <div class="row text-center">
         <div class="col-md-12">
-          <h1>Tic Tac Toe</h1>
+          <h1>XO</h1>
           <hr>
         </div>
       </div>
@@ -29,32 +27,37 @@
 
         <!-- a column represents our game board -->
         <!-- the `offset` class helps us center the board -->
-        <div class="col-md-6 col-md-offset-3" id="board">
+        <div class="col-xs-6 col-xs-offset-3" id="board">
 
           <!-- you can put rows inside of columns! -->
           <!-- Bootstrap subdivides these 'nested' rows into 12 columns, too! -->
           <div class="row">
-            <div class="col-md-4 box top left diag1" id="top-left"></div>
-            <div class="col-md-4 box top center" id="top-center"></div>
-            <div class="col-md-4 box top right diag2" id="top-right"></div>
+            <div class="col-xs-4 box top left diag1" id="top-left"></div>
+            <div class="col-xs-4 box top center" id="top-center"></div>
+            <div class="col-xs-4 box top right diag2" id="top-right"></div>
           </div>
           <div class="row">
-            <div class="col-md-4 box middle left" id="middle-left"></div>
-            <div class="col-md-4 box middle center diag1 diag2" id="middle-center"></div>
-            <div class="col-md-4 box middle right" id="middle-right"></div>
+            <div class="col-xs-4 box middle left" id="middle-left"></div>
+            <div class="col-xs-4 box middle center diag1 diag2" id="middle-center"></div>
+            <div class="col-xs-4 box middle right" id="middle-right"></div>
           </div>
           <div class="row">
-            <div class="col-md-4 box bottom left diag2" id="bottom-left"></div>
-            <div class="col-md-4 box bottome center" id="bottom-cener"></div>
-            <div class="col-md-4 box bottom right diag1" id="bottom-right"></div>
+            <div class="col-xs-4 box bottom left diag2" id="bottom-left"></div>
+            <div class="col-xs-4 box bottome center" id="bottom-center"></div>
+            <div class="col-xs-4 box bottom right diag1" id="bottom-right"></div>
           </div>
 
 
 
         </div>
       </div>
-      <button id='reset'>Reset</button>
-      <h1 class='alertDisplay'></h1>
+      <div class="row">
+      <div class="col-xs-12 reset"><button class="reset">Reset</button></div>
+      </div>
+      <h2 class='alertDisplay'></h2>
+      <div>
+        <img class="col-xs-3 beyonce" src = "img/beyonce.png">
+      </div>
     </div>
   </body>
 </html>
