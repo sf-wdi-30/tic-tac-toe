@@ -5,7 +5,7 @@ var player1 = "X";
   // all code to manipulate the DOM
   // goes inside this functionz
 
-$(".box").on("click", function clicked(event){
+$('.box').on("click", function clicked(event){
   var markedBoxes = $(this);
 
   if(player1===0){
@@ -18,10 +18,9 @@ $(".box").on("click", function clicked(event){
   });
 });
 
-$(".btn").on("click", function clear(event){
-
-})
-
+$('.reset').on("click", function reset(event){
+  $('#board')[0].reset(board);
+});
 
 //rules
 //var matchesOnBoard = ["1", "2", "3", "4", "5", "6", "7", "8", "9"];
