@@ -28,7 +28,7 @@ var player = 1;
               player = 1; //if not won.. pass to player 1... (does this make sense?)
            }
          }
-      
+      }
     });
 //Check if someone won?--- create function that checks symbol X or O? ('ex' and 'oh')...
 //list ALL winning possibilities? (check to see if works)
