@@ -1,10 +1,10 @@
 // wait for the DOM to finish loading
-alert("Sanity Check!");
-var boxesRow1 = [".box0", ".box3", ".box6", ".box2", ".box0", ".box0", ".box1", ".box2"];
+alert("Ready? X goes first");
+var boxesRow1 = [".box0", ".box3", ".box6", ".box2", ".box0", ".box0", ".box1", ".box2"]; //array of rows indexes match up as winning combos
 var boxesRow2 = [".box1", ".box4", ".box7", ".box4", ".box4", ".box3", ".box4", ".box5"];
 var boxesRow3 = [".box2", ".box5", ".box8", ".box6", ".box8", ".box6", ".box7", ".box8"];
 
-function winChecker(){ // function made outside of enginge
+function winChecker(){ // win check function made outside of engine
   for(i=0; i<9 ;i++)
     if ($(boxesRow1[i]).val() === "O" && $(boxesRow2[i]).val() === "O" && $(boxesRow3[i]).val() === "O"){
       alert("O wins!");
@@ -15,7 +15,6 @@ function winChecker(){ // function made outside of enginge
       return true;
     }
 }
-
 $(document).ready(function() {
 //   // all code to manipulate the DOM
 //   // goes inside this function
@@ -41,20 +40,23 @@ $(document).ready(function() {
             turnAlert = "X";
             //$(this).css('background-color', ("red"));
           }
+
       //winChecker();
       if(winChecker()){ // conditional statement checking for win or draw. if either is true execution will stop
         return;
       }
-      else if(turnCounter === 9){
+      else if(turnCounter === 9){ // if all spots are full, draw
         alert("DRAW");
         return;
       }
+
       alert(turnAlert + "'s turn");
       $(this).addClass("took"); // adds took class to each HTML element
+      turnCounter++;
       }
-    turnCounter++;
     });
-    $('.reset').on("click", function handleClick(e){ // reset button works by removing classes
+
+    $('.reset').on("click", function handleClick(e){ // reset button works by removing classes, values, and text
       $('.box').removeClass("took");
       $('.box').text("");
       $('.box').val("");
