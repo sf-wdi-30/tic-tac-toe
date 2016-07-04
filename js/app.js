@@ -1,23 +1,27 @@
 // wait for the DOM to finish loading
 $(document).ready(function() {
 
-//Which player is currently going?
-
 var player = 1;
 
 //clicked on square
-    $(".col-md-4").on("click" , function(event) {
+    $(".col-md-4").on("click", function(event) {
 
-      alert("Draw here!");
       var boxClicked = $(this);
-//determine if there is element in box
+
+//alternate turns and determine if box is taken
       if(boxClicked.hasClass('ex') || boxClicked.hasClass('oh')) {
-          alert('This square has already been clicked.');}
-          
-      }
+          alert("This box is taken!");
+      } else {
+          if(player === 1) {
+            boxClicked.addClass('ex');
+            player = 2;
+         } else {
+            boxClicked.addClass('oh');
+            player = 1;
+          }
+
+          }
+
+      });
 
     });
-
-});
-
-//sanity check (okay!)
