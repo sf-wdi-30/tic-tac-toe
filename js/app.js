@@ -128,10 +128,14 @@ function checkWin(condition) {
       });
         var testString = testArray.toString();
         if (testString === "x,x,x") {
+        $('#board div div').addClass("filled");
         alert("X Wins");
+        turnCounter=0;
         }
         else if (testString === "o,o,o") {
-        alert("Y Wins");
+        $('#board div div').addClass("filled");
+        alert("O Wins");
+        turnCounter=0;
         }
         else {
         console.log("NOPE");
@@ -141,16 +145,27 @@ function checkWin(condition) {
 // FOR LATER: RETURN A FUNCTION INSTEAD OF ALERT win(x) or win(y)
 //**
 
-winConditions = ["$(.'top')",
-// ".'middle'", ".'bottom'", "'left'", "'center'", "'right'", "'diag1'", "'diag2'"
-];
+function displayTurn() {
+
+}
+
+// function checkFull {
+//   $('#board div div')
+//   if ($(this).hasClass('filled'))
+// }
+
+
+// failed experiment with for loop for iterating on winCondition();
+// winConditions = ["$(.'top')",
+// // ".'middle'", ".'bottom'", "'left'", "'center'", "'right'", "'diag1'", "'diag2'"
+// ];
 
 var xIcon = ('url("img/xIcon.png")');
 var oIcon = ('url("img/oIcon.png")');
+var turnCounter = 0;
+
 //set starting player
 var playerIcon = oIcon;
-// //test
-// var topRow = $('.top').hasClass();
 //switch player function
 var playerSwitch = function() {
   if (playerIcon === xIcon) {
@@ -171,9 +186,10 @@ $(document).ready(function() {
 
 //draw event
   $('#board').on('click', "div div", function(event) {
-    if ($(this).hasClass('filled')) {
+    if ((($(this).hasClass('filled'))) || (turnCounter===10)) {
     }
-      else {
+    else {
+  turnCounter += 1;
   $(this).css('background-image', playerIcon);
   $(this).addClass("filled");
   if (playerIcon === (xIcon)) {
@@ -185,6 +201,7 @@ $(document).ready(function() {
     $(this).attr('title', "o");
   }
   playerSwitch(this);
+  //brute force solution; I tried a dozen different methods to put this in a for loop, but jQuery refused to accept the variable
   checkWin($('.top'));
   checkWin($('.middle'));
   checkWin($('.bottom'));
@@ -193,12 +210,16 @@ $(document).ready(function() {
   checkWin($('.right'));
   checkWin($('.diag1'));
   checkWin($('.diag2'));
-  // for (var i = 0; i < winConditions.length; i++) {
-  //     checkWin(winConditions[i]);
-  // }
+  // checkFull();
+  // displayTurn();
+  console.log(turnCounter);
+  if (turnCounter===9) {
+    alert("Cat's Game!");
+  }
   console.log("done");
 }
-});
+}
+);
 });
 
 // $(this).css('background-color', 'blue');
