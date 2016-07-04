@@ -5,7 +5,26 @@
 .box {
   border: 3px solid black;
   height: 150px;
-
 }
 
+.col-md-4 {
+    background-color: yellow;
+}
+h1 {
+    font-weight: 300;
+    font-size: 110px;
+    color: yellow;
+    font-family: Impact;
+}
+body {
+background-color: purple;
+}
+
+.ex {
+    background-color: red;
+}
+
+.oh {
+    background-color: blue;
+}
 }
