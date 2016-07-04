@@ -8,17 +8,14 @@
 }
 
 body {
-  background-color:rgb(190,190,190);
+  /*background-color:rgb(190,190,190);*/
 }
 
 img {
-  
+  height:50px;
+  width:50px;
 }
 
-.jake {
-  background-image: url('https://upload.wikimedia.org/wikipedia/en/d/d0/JaketheDog.png');
-}
-
-.finn {
-  background-image: url('Finn');
+.checked {
+  background-color: blue;
 }
