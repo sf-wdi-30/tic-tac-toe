@@ -1,22 +1,31 @@
 body {
   background-color: black;
-  color:white;
+  color:#f4c0d7;;
   font-family: 'Oswald', sans-serif;
   text-align: center;
 }
 
-
 h1 {
   font-size: 5em;
+  color:#f4c0d7;
 }
 
-h2 {
-  font-size:3m
+.letterX {
+  float:left;
+  position:absolute;
+  top: 140px;
+   height: 100px;
 }
+
+.alertDisplay {
+  color:#f4c0d7;
+}
+
 .beyonce {
     position:fixed;
     bottom:0px;
-    left:0%;
+    left:-1.5%;
+    max-height:70%;
     }
 
 button {
