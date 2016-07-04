@@ -4,9 +4,9 @@ $(document).ready(function() {
 var player = 1;
 
 //clicked on square
-    $(".col-md-4").on("click", function(event) {
+  $(".col-md-4").on("click", function(event) {
 
-      var boxClicked = $(this);
+    var boxClicked = $(this);
 
 //alternate turns and determine if box is taken
       if(boxClicked.hasClass('ex') || boxClicked.hasClass('oh')) {
@@ -18,10 +18,16 @@ var player = 1;
          } else {
             boxClicked.addClass('oh');
             player = 1;
-          }
+           }
 
-          }
+      }
+    });
+//Check if someone won?--- create function that checks symbol X or O? ('ex' and 'oh')
+  function checkWin(){
 
-      });
+  }
+
+
+
 
     });
