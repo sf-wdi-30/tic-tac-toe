@@ -1,12 +1,18 @@
 // wait for the DOM to finish loading
 $(document).ready(function() {
-
+var player1 ="X";
   // all code to manipulate the DOM
   // goes inside this functionz
 
 $(".box").on("click", function clicked(){
   var boxes = $(this);
-  boxes.css("background" , "url(http://i.imgur.com/ZYIvSdV.jpg?3");
+  if(player1===0){
+    player1 = 1;
+      boxes.css("background" , "url(http://i.imgur.com/OhWUAEc.jpg?4");
+  }else{
+    player1 = 0;
+      boxes.css("background" , "url(http://i.imgur.com/KVrSf2j.png?6");
+    }
   });
 });
 
