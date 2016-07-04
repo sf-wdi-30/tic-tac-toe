@@ -43,16 +43,15 @@ $(document).ready(function() {
 
       //winChecker();
       if(winChecker()){ // conditional statement checking for win or draw. if either is true execution will stop
-        return;
+        return true;
       }
-      else if(turnCounter === 9){ // if all spots are full, draw
+      else if(turnCounter === 8){ // if all spots are full, draw
         alert("DRAW");
-        return;
       }
-
-      alert(turnAlert + "'s turn");
+      
       $(this).addClass("took"); // adds took class to each HTML element
       turnCounter++;
+      alert(turnAlert + "'s turn");
       }
     });
 
