@@ -18,3 +18,9 @@ h1{
 .head {
   font-family: cursive; sans-serrif;
 }
+
+.form {
+  display: block;
+  text-align: center;
+  margin-top: 10px;
+}
