@@ -15,6 +15,9 @@ $('.box').on("click", function clicked(event){
     player1 = 0;
       markedBoxes.css("background" , "url(http://i.imgur.com/KVrSf2j.png?6");//X
     }
+    if(('player1=0') || ('player1=1')){
+      alert("This box has already been selected!");
+    }
   });
 });
 
