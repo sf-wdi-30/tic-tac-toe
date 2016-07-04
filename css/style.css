@@ -17,3 +17,11 @@ font-size: 100px;
   margin-top: 10px;
   width: 9em;
 }
+
+.X{
+  background: blue;
+}
+
+.O{
+  background: red;
+}

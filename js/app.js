@@ -1,29 +1,34 @@
 // wait for the DOM to finish loading
 $(document).ready(function() {
-var player1 = "X";
-//var player2 = "O"; //use this while trying to block the other box
   // all code to manipulate the DOM
   // goes inside this functionz
+  var player = 1;
 
-$('.box').on("click", function clicked(event){
-  var markedBoxes = $(this);
+  $('.box').on("click", function clicked(event){
 
-  if(player1===0){
-    player1 = 1;
-      markedBoxes.css("background" , "url(http://i.imgur.com/OhWUAEc.jpg?4");//O
-  }else{
-    player1 = 0;
-      markedBoxes.css("background" , "url(http://i.imgur.com/KVrSf2j.png?6");//X
-    }
-    if(('player1=0') || ('player1=1')){
-      alert("This box has already been selected!");
-    }
-  });
+    var markedBoxes = $(this);
+
+    if(markedBoxes.hasClass('X') || markedBoxes.hasClass('O')){
+      alert('This box has already been selected!');//Still switches images even after alert.
+      markedBoxes('X') !== markedBoxes('O');//this stops from switching colors.
+
+    }if(player === 1){
+      markedBoxes.addClass('X');
+      player = 2;
+    }else{
+      markedBoxes.addClass('O');
+
+      player = 1;//So that it alternates image and player.  If not will stay on the second players img and turn.
+  }
+});
 });
 
-$('.reset').on("click", function reset(event){
-  $('#board')[0].reset(board);
-});
+//$('.btn').click(function() {
+  // player = 1;
+  // messages.html('');
+  // reset(table);
+ //});
+
 
 //rules
 //var matchesOnBoard = ["1", "2", "3", "4", "5", "6", "7", "8", "9"];
