@@ -5,6 +5,7 @@ $(document).ready(function() {
 //   // goes inside this function
   var turnCounter = 0; //maximum of 9 turns
 
+
   $(".box").on("click", function checkBox(event){
       if ($(this).hasClass("took")){ // conditional statement that checks if square is taken
         alert("Can't move here");
@@ -22,11 +23,11 @@ $(document).ready(function() {
           }
       $(this).addClass("took");
       turnCounter++;
-        if((turnCounter%2) === 1){
+        if((turnCounter%2) === 1){  // conditional statement that alerts which player's turn it is
           alert("O's turn");
         }
         else{
-        alert("X's turn")
+          alert("X's turn");
         }
       }
 // checking for winner
@@ -81,5 +82,11 @@ $(document).ready(function() {
       else if (turnCounter === 9){
         alert("Draw!");
       }
+    });
+    $('.reset').on("click", function handleClick(e){ // reset button works by removing classes 
+      $('.box').removeClass("took");
+      $('.box').text(" ");
+      $('.box').val(" ");
+      $('.box').css('background-color', "white");
     });
 });
