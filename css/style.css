@@ -1,14 +1,19 @@
-#board {
+h1{
+font-family: lucida san;
+font-size: 100px;
+}
+
+#board{
   margin-top: 10px;
   background-color: white;
 }
 
-.box {
+.box{
   border: 1px solid black;
   height: 150px;
 }
 
-.btn {
+.btn{
   margin-top: 10px;
   width: 9em;
 }
