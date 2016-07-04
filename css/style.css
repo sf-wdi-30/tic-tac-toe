@@ -2,14 +2,25 @@
   margin-top: 10px;
 }
 
+body {
+  font-family: 'Chewy', cursive;
+  text-align: center;
+  font-size: 100px;
+}
+
+.btn {
+  font-family: sans-serif;
+  text-align: center;
+  font-size: 40x;
+}
+
 .box {
   border: 2px dashed black;
   height: 150px;
-  background-color: #007CCC
-
+  background-color: white;
 }
 
 .row.text-center {
-  background-color: green;
+  background-color: white;
 
 }
