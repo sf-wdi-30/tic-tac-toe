@@ -3,6 +3,13 @@
 }
 
 .box {
-  border: 1px solid black;
+  border: 2px dashed black;
   height: 150px;
+  background-color: #007CCC
+
+}
+
+.row.text-center {
+  background-color: green;
+
 }

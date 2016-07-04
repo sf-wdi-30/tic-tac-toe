@@ -70,15 +70,21 @@ $('.box').click(function (){ // if box has value, don't allow for input
         console.log("X wins");
     }else if ( $('.box3').val() === "O" && $('.box5').val() === "O" && $('.box7').val() === "O"){
         console.log("O wins");
-
+    }else if (board === 9){ // add ability to end the game in a draw
+      console.log ("It's a draw, play again!");
+    }
 }
-});
+);
 
 // how to reset the game and clear the board
       $('.btn').on("click", function handleClick(e){ // how to reset the game
-        alert("Reset!");
+      $('.box').removeClass("claimed"); // removes claimed class
+      $('.box').text(" "); // remove text
+      $('.box').val(" "); // remove value
+      $('.box').css('background-color', "white"); // remove background-color
+      board = 0; // "resets" board back to 0
       });
 
-  // goes inside this function
+
 
 });
