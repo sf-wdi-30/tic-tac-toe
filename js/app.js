@@ -3,6 +3,16 @@ $(document).ready(function() {
   // all code to manipulate the DOM
   // goes inside this function
   alert("JS is linked to html!");
+
+  $(".box").on("click", function handleClick(event) {
+    if ($(this).html()==='') {
+      $(this).html(turn);
+      nextTurn();
+    } else {
+      alert("box is filled!");
+    }
+  });
+
 });
 
 
