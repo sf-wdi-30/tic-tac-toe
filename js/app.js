@@ -120,22 +120,31 @@
 // jQuery.each(($('.top')), function(index, value) {
 //     console.log('element at index ' + index + ' is ' + value);
 // });
-function checkWin() {
+
+function checkWin(condition) {
     var testArray = [];
-    $('.top').each(function () {
+    condition.each(function () {
         testArray.push($(this).attr('title'));
       });
         var testString = testArray.toString();
         if (testString === "x,x,x") {
-        console.log("X Wins");
+        alert("X Wins");
         }
         else if (testString === "o,o,o") {
-          console.log("Y Wins");
+        alert("Y Wins");
         }
         else {
-          console.log("NOPE");
+        console.log("NOPE");
         }
 }
+//**
+// FOR LATER: RETURN A FUNCTION INSTEAD OF ALERT win(x) or win(y)
+//**
+
+winConditions = ["$(.'top')",
+// ".'middle'", ".'bottom'", "'left'", "'center'", "'right'", "'diag1'", "'diag2'"
+];
+
 var xIcon = ('url("img/xIcon.png")');
 var oIcon = ('url("img/oIcon.png")');
 //set starting player
@@ -163,7 +172,6 @@ $(document).ready(function() {
 //draw event
   $('#board').on('click', "div div", function(event) {
     if ($(this).hasClass('filled')) {
-
     }
       else {
   $(this).css('background-image', playerIcon);
@@ -177,6 +185,14 @@ $(document).ready(function() {
     $(this).attr('title', "o");
   }
   playerSwitch(this);
+  checkWin($('.top'));
+  // for (var i = 0; i < winConditions.length; i++) {
+  //     checkWin(winConditions[i]);
+  // }
+  console.log("done");
 }
 });
 });
+
+// $(this).css('background-color', 'blue');
+//   %(this).attr()
