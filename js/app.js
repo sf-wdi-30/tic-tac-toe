@@ -60,7 +60,7 @@ $(document).ready(function() {
       $('.box').removeClass("took");
       $('.box').text("");
       $('.box').val("");
-      $('.box').css('background-color', "white");
+      // $('.box').css('background-color', "white");
       turnCounter = 0;
     });
 });
