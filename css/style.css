@@ -4,6 +4,17 @@
 }
 
 .box {
-  border: 1px solid black;
+  border: 3px solid black;
   height: 150px;
+  width: 150px;
+  border-radius: 8px;
+  background-image: 'http://i.imgur.com/445g4BV.png'
+}
+
+h1{
+  font-size: 50px;
+}
+
+.head {
+  font-family: cursive; sans-serrif;
 }
