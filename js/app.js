@@ -9,9 +9,9 @@ $(document).ready(function() {
 
   // create event listener for box click
   $(".box").on("click", function handleClick(event) {
-    if ($(this).html()==='') {
+    if ($(this).children(':first').attr("src")==='http://demo.qodeinteractive.com/satellite/wp-content/uploads/2013/09/slide1.jpg') {
       $(this).addClass('checked');
-      $(this).html(player);
+      $(this).children(':first').attr("src", imgSrc[player]);
       switchPlayer();
     }
     else {
@@ -29,12 +29,19 @@ $(document).ready(function() {
     player = 'X';
     $('#message').text("Current player is: " + player);
   });
+
+
 });
 
-var player = 'X';
+var player = 'X',
+    $boxes = $('.box'),  // set variable for all jQuery boxes
+    rowsOfBoxes = [
+      [$boxes.eq(0), $boxes.eq(1), $boxes.eq(2)],
+      [$boxes.eq(3), $boxes.eq(4), $boxes.eq(5)],
+      [$boxes.eq(6), $boxes.eq(7), $boxes.eq(8)],
+    ];
+    imgSrc = { 'X': 'img/rick.jpeg', 'O': 'img/morty.png' };
 
-// set variable for all jQuery boxes
-var $boxes = $('.box');
 
 // switch player
 function switchPlayer() {
@@ -51,10 +58,6 @@ function switchPlayer() {
 function allThreeEqual(player, boxSet) {
   return (boxSet[0].html()===player) && (boxSet[1].html()===player) && (boxSet[2].html()===player);
 }
-
-var rowsOfBoxes = [[$boxes.eq(0), $boxes.eq(1), $boxes.eq(2)],
-                   [$boxes.eq(3), $boxes.eq(4), $boxes.eq(5)],
-                   [$boxes.eq(6), $boxes.eq(7), $boxes.eq(8)],];
 
 function checkAllRows() {
   for (var i = 0; i < rowsOfBoxes.length; i++) {
