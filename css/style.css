@@ -23,6 +23,7 @@ h1 {
   top: 20%;
   width: 100%;
   pointer-events: none
+  border-top: blue 5px;
 }
 }
 

@@ -127,19 +127,26 @@ function checkWin(condition) {
         testArray.push($(this).attr('title'));
       });
         var testString = testArray.toString();
+        var overlay = jQuery('<div class="overlay"><h1 class="winnerMessage"></h1><br class="beforeImg"></div>');
         if (testString === "x,x,x") {
         $('#board div div').addClass("filled");
         // alert("X Wins");
         turnCounter=0;
         gameWon=1;
-        $('.alertDisplay').text("Player X Wins!");
+        $('.alertDisplay').text(" ");
+        overlay.appendTo(document.body);
+        $('.winnerMessage').html("JAY-Z AND PLAYER X WIN! <br><br> TAKE YOUR ASS TO RED LOBSTER!");
+        $( ".beforeImg" ).after("<img class='overlayGif' src='img/jayBow.gif'>");
         }
         else if (testString === "o,o,o") {
         $('#board div div').addClass("filled");
         // alert("O Wins");
         turnCounter=0;
         gameWon=1;
-        $('.alertDisplay').text("Player O Wins!");
+        $('.alertDisplay').text(" ");
+        overlay.appendTo(document.body);
+        $('.winnerMessage').html("WHO RUNS THE WORLD? <br><br> BEYONCÉ AND PLAYER O!");
+        $( ".beforeImg" ).after("<img class='overlayGif' src='img/beyonceDance.gif'>");
         }
         else {
         console.log("NOPE");
@@ -190,11 +197,9 @@ var playerSwitch = function() {
 
 $(document).ready(function() {
 displayTurn();
-var overlay = jQuery('<div class="overlay"><h1 class="winnerMessage"></h1><br><img class="overlayGif" src="img/beyonce.gif"></div>');
-overlay.appendTo(document.body);
-$('.winnerMessage').text("test");
   //reset button
   $('.reset').on('click', function(event) {
+    $(".overlay").remove();
     $("div").css('background-image', "");
     $("div").removeClass('filled');
     $("div").attr('title', " ");
