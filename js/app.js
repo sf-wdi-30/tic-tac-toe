@@ -63,7 +63,7 @@ if (boxSelected.hasClass('X') || boxSelected.hasClass('O')) { // if box has been
     }else if ( $('.box3').hasClass('O') && $('.box5').hasClass('O') && $('.box7').hasClass('O')){
         alert("O wins!");
     // add ability to end the game in a draw
-  }else if (turnCounter === 9){
+    }else if (turnCounter === 9){
         alert("It's a draw, play again!");
     }
 });
