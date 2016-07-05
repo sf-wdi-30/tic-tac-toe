@@ -2,12 +2,15 @@
 $(document).ready(function() {
   // all code to manipulate the DOM
   // goes inside this function
-  alert("JS is linked to html!");
+  console.log("JS is linked to html!");
 
+  var originalState = $('.box').html();
+
+  // create default message text
   $('#message').text("Current player is: X");
-
+  // set player = 'X'
   startGame();
-
+  // create event listener for box click
   $(".box").on("click", function handleClick(event) {
     if ($(this).html()==='') {
       $(this).addClass('checked');
@@ -18,19 +21,20 @@ $(document).ready(function() {
       alert("box is filled!");
     }
   });
-  $('#board').append('<input type="reset" value="Reset">').addClass('text-center');
 
+  $('#board').append('<input type="reset" value="Reset">').addClass('text-center');
+  // set event listener to handle reset button
+  $('input').on("click", function handleReset(event) {
+    $('.box').each(function() {
+      $(this).html('');
+      $(this).removeClass('checked');
+    });
+  });
 
 });
 
 // set variable for all jQuery boxes
 var $boxes = $('.box');
-// set event listener to handle reset button
-$('input').on("click", function handleReset(event) {
-  $('.box').each(function() {
-    $(this).html('');
-  });
-});
 
 var $box0 = $boxes.eq(0);
 var $box1 = $boxes.eq(1);
