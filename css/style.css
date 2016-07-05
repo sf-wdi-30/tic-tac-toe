@@ -22,7 +22,9 @@ background-color: purple;
 }
 
 .ex {
-  background-image: url();
+  background-image: url(http://emojipedia-us.s3.amazonaws.com/cache/b7/08/b7086ee02c60d730555b8ca1eeb999de.png);
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
 .oh {
