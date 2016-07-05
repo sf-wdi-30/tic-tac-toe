@@ -17,12 +17,12 @@ h1 {
     font-family: Impact;
 }
 body {
-background-image: url(http://clipartsign.com/upload/2016/03/24/burrito-pictures-of-mexican-food-clip-art.png);
-background-color: purple;
+  background-image: url(http://clipartsign.com/upload/2016/03/24/burrito-pictures-of-mexican-food-clip-art.png);
+  background-color: purple;
 }
 
-button{
-    align-content: center;
+.btn btn-primary btn-lg {
+  text-align: center;
 }
 
 .ex {
