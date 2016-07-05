@@ -58,7 +58,7 @@ function checkWin(condition) {
     }
     else {
       //sanity check
-      console.log("NOPE");
+      console.log("no win conditions met");
     }
   }
 
