@@ -16,49 +16,32 @@
     <title>XO - Beyonce Tic Tac Toe</title>
   </head>
   <body>
-    <!-- <div class="overlay">
-      <h2 class="overlayContent">Some mild-mannered text trapped inside a bar.</h2>
-      <br>
-      <img class="overlayGif" src="img/beyonce.gif">
-    </div> -->
     <div class="container">
       <div class="row text-center">
+        <!-- new game button -->
         <div class="col-xs-3 resetDiv"><button class="reset">NEW GAME</button></div>
           <div class="col-xs-6">
             <h1>XO</h1>
           </div>
           <div class="col-xs-3">
+            <!-- gif button -->
             <button class="gifButton">I &#9829; GIFs</button>
           </div>
         <div class="row text-center">
-      <div class="col-xs-12">
-        <hr>
-      </div>
-    </div>
-  </div>
-      <!-- <div class="row rowLetterX"> -->
-        <!-- <div class="letterX"> -->
-          <!-- <h1 class="letter">X</h1> -->
-          <!-- <div class="row">
-          <div class= "beyonceDiv col-xs-3" >
-            <img class= "beyonce" src = "img/beyonce.png">
+          <div class="col-xs-12">
+            <hr>
           </div>
-          <div class= "col-xs-9">
-        </div> -->
+        </div>
+      </div>
+        <div class="row">
+          <div class= "beyonceDiv col-xs-3" >
+            <h1 class="beyonceText">Player O</h1>
+              <div class="row">
+                <img class= "beyonce" src = "img/beyonce.png">
+              </div>
+          </div>
 
-        <!-- a column represents our game board -->
-        <!-- the `offset` class helps us center the board -->
-        <div class="row">
-        <div class= "beyonceDiv col-xs-3" >
-          <h1 class="beyonceText">Player O</h1>
-        <div class="row">
-          <img class= "beyonce" src = "img/beyonce.png">
-        </div>
-        </div>
         <div class="col-xs-6" id="board">
-
-          <!-- you can put rows inside of columns! -->
-          <!-- Bootstrap subdivides these 'nested' rows into 12 columns, too! -->
           <div class="row">
             <div class="col-xs-4 box top left diag1" id="top-left"></div>
             <div class="col-xs-4 box top center" id="top-center"></div>
@@ -76,18 +59,16 @@
           </div>
           <div class="row">
             <div class="col-xs-12">
-            <h2 class="alertDisplay"></h2>
+              <h2 class="alertDisplay"></h2>
+            </div>
           </div>
         </div>
-        </div>
-
-
 
         <div class= "beyonceDiv col-xs-3" >
           <h1 class="jayText">Player X</h1>
-        <div class="row">
-          <img class= "jay" src = "img/jay.png">
-        </div>
+          <div class="row">
+            <img class= "jay" src = "img/jay.png">
+          </div>
         </div>
       </div>
     </div>
