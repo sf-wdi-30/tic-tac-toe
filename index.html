@@ -10,11 +10,12 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
 
     <!-- link to custom stylesheet (always require after Bootstrap) -->
-
+    <link rel="stylesheet" href="css/style.css">
     <!-- jQuery from CDN -->
-
+    <script type="text/javascript" src="http://code.jquery.com/jquery-2.2.1.min.js"></script>
 
     <!-- link to custom javascript file (always require after external JS libraries) -->
+    <script src="js/app.js"></script>
 
     <title>Tic Tac Toe</title>
   </head>
@@ -34,13 +35,25 @@
 
           <!-- you can put rows inside of columns! -->
           <!-- Bootstrap subdivides these 'nested' rows into 12 columns, too! -->
-          <div class="row">
-            <div class="col-md-4 box">a</div>
-            <div class="col-md-4 box">a</div>
-            <div class="col-md-4 box">a</div>
+          <div class="row 1">
+            <div id=a1 class="col-md-4 box"></div>
+            <div id=a2 class="col-md-4 box"></div>
+            <div id=a3 class="col-md-4 box"></div>
           </div>
 
+          <div class="row 2">
+            <div id=b1 class="col-md-4 box"></div>
+            <div id=b2 class="col-md-4 box"></div>
+            <div id=b3 class="col-md-4 box"></div>
+          </div>
 
+          <div class="row 3">
+            <div id=c1 class="col-md-4 box"></div>
+            <div id=c2 class="col-md-4 box"></div>
+            <div id=c3 class="col-md-4 box"></div>
+          </div>
+
+           <button id="restart">New game</button>
 
         </div>
       </div>
