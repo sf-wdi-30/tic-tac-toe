@@ -28,6 +28,8 @@ background-color: purple;
 }
 
 .oh {
-    background-color: blue;
+    background-image: url(http://emojipedia-us.s3.amazonaws.com/cache/71/ff/71ff1f8f7b81fa744d0dd6b3c39816ae.png);
+    background-repeat: no-repeat;
+    background-position: center;
 }
 }
