@@ -8,6 +8,8 @@ body {
 h1 {
   font-size: 5em;
   color:#f4c0d7;
+  padding:0px;
+  height:50%;
 }
 
 .letterX {
@@ -21,12 +23,15 @@ h1 {
   color:#f4c0d7;
 }
 
+.beyonceDiv {
+
+}
+
 .beyonce {
-    position:fixed;
-    bottom:0px;
-    left:-1.5%;
-    max-height:70%;
-    }
+  max-height: 30em;
+  position:relative;
+  left:-25%;
+}
 
 button {
   margin:0, auto;
