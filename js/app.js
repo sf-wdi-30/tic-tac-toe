@@ -190,7 +190,9 @@ var playerSwitch = function() {
 
 $(document).ready(function() {
 displayTurn();
-
+var overlay = jQuery('<div class="overlay"><h1 class="winnerMessage"></h1><br><img class="overlayGif" src="img/beyonce.gif"></div>');
+overlay.appendTo(document.body);
+$('.winnerMessage').text("test");
   //reset button
   $('.reset').on('click', function(event) {
     $("div").css('background-image', "");
