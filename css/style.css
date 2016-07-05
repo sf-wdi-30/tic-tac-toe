@@ -28,17 +28,25 @@ h1 {
   margin:0px;
 }
 
-.beyonce {
+.beyonce, .jay {
   max-height: 30em;
   position:relative;
-  left:-20%;
   bottom:-20%;
   margin:0;
   padding:0;
 }
 
-button {
-  margin:0, auto;
+.beyonce {
+  left:-20%;
+}
+.jay {
+  right:-10%;
+}
+
+.reset {
+    margin-top:15%;
+    font-size:3em;
+    background-color:#000000;
 }
 
 img {
@@ -50,9 +58,16 @@ img {
   margin-top: 10px;
 }
 
-#beyonceText {
-  /*color:#5200ff;*/
+.resetDiv {
+    text-align: center;
+}
+
+.beyonceText {
   color:#e1152d;
+}
+
+.jayText {
+  color:#5200ff;
 }
 
 .box {
