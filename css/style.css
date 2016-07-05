@@ -1,6 +1,6 @@
 h1{
-font-family: lucida san;
-font-size: 100px;
+font-family: helvetica serif;
+font-size: 80px;
 }
 
 #board{
@@ -11,17 +11,24 @@ font-size: 100px;
 .box{
   border: 1px solid black;
   height: 150px;
+  background-color: grey;
+  opacity: 0.6;
 }
 
 .btn{
   margin-top: 10px;
   width: 9em;
+  color: white;
 }
 
 .X{
-  background: blue;
+  background: url('http://i.imgur.com/GjbcLGu.jpg?1');
+  background-position: center;
+  background-size: 255px;
 }
 
 .O{
-  background: red;
+  background: url('http://i.imgur.com/0RDycdW.jpg?1');
+  background-position: center;
+  background-size: 270px;
 }
