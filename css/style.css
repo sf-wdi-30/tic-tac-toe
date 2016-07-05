@@ -59,6 +59,7 @@ h1 {
   bottom:-20%;
   margin:0;
   padding:0;
+  max-width:160%;
 }
 
 .beyonce {
@@ -97,8 +98,13 @@ img {
   color:#e1152d;
 }
 
+@media (max-width: @screen-xs) {
+    .jayText{font-size: 10px;}
+}
+
 .jayText {
   color:#5200ff;
+
 }
 
 .box {
