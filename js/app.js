@@ -10,7 +10,7 @@ var player = 1;
 
 //alternate turns and determine if box is taken
 //Symbols: 'ex' and oh'
-      if(boxClicked.hasClass('ex') || boxClicked.hasClass('oh')) {
+      if(boxClicked.hasClass("ex") || boxClicked.hasClass("oh")) {
           alert("This box is taken!");
       } else {
           if(player === 1) {
@@ -32,7 +32,7 @@ var player = 1;
     });
 //Check if someone won?--- create function that checks symbol X or O? ('ex' and 'oh')...
 //list ALL winning possibilities? (check to see if works)
-//horizontal rows
+//Horizontal
   function checkWin(symbol) {
     if($("#1").hasClass(symbol) && $("#2").hasClass(symbol) && $("#3").hasClass(symbol)) {
       return true;
@@ -51,12 +51,20 @@ var player = 1;
 
     } else if ($("#3").hasClass(symbol) && $("#6").hasClass(symbol) && $("#9").hasClass(symbol)) {
     } else {
-        return false;
+//Diagonals
+    }if($("#1").hasClass(symbol) && $("#5").hasClass(symbol) && $("#9").hasClass(symbol)) {
+      return true;
+
+    }  else if ($("#3").hasClass(symbol) && $("#5").hasClass(symbol) && $("#7").hasClass(symbol)) {
+      return true;
+    } else {
+
+      return false;
     }
-
   }
-
-
-
-
+//Refresh Button
+  $("button").on("click", function(){
+      location.reload();
     });
+
+});
