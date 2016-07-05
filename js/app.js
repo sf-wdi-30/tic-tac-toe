@@ -8,22 +8,22 @@ var player = 1;
 
     var boxClicked = $(this);
 
-//alternate turns and determine if box is taken
+//alternate turns and determine if box is taken.. must add function to check win.
 //Symbols: 'ex' and oh'
       if(boxClicked.hasClass("ex") || boxClicked.hasClass("oh")) {
           alert("This box is taken!");
       } else {
           if(player === 1) {
-            boxClicked.addClass("ex"); //player X
+            boxClicked.addClass("ex"); //player X(burrito)
             if (checkWin("ex")) {
-                alert("Winner!");
+                alert("You are the winner!");
             } else {
               player = 2;
               }
           } else {
-            boxClicked.addClass("oh"); //player O
+            boxClicked.addClass("oh"); //player O(taco)
             if (checkWin("oh")) {
-                alert("Winner!");
+                alert("You are the winner!");
             } else {
               player = 1; //if not won.. pass to player 1... (does this make sense?)
            }
@@ -59,7 +59,7 @@ var player = 1;
       return true;
     } else {
 
-      return false;
+      return false; //If not any of these combos, it is not a win. therefore, no alert.
     }
   }
 //Refresh Button
