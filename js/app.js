@@ -1,140 +1,86 @@
-// wait for the DOM to finish loading
-
-var turn = true;
-var finalCountDown = 0;
-var oWins = false;
-var xWins = false;
-
-$(document).ready(function(e) {
-
-  $('.box').one('click', function(e){
-
-    if(turn === true){
-      $(this).css('background-image', 'url("https://www.petfinder.com/wp-content/uploads/2012/11/122163343-conditioning-dog-loud-noises-632x475.jpg")');
-      $(this).text('X');
-      didXWin();                 // Player X
-      draw();
-      turn = false;
-      finalCountDown += 1;    // do ~ do ~ do ~ dooo ~ do ~ do ~ do ~ do ~ dooo
-      console.log(e);
-    }
-
-    else {
-
-      $(this).css('background-image', 'url("https://pixabay.com/static/uploads/photo/2014/03/29/09/17/cat-300572_960_720.jpg")');
-      $(this).text('O');
-      didOWin();                // Player O
-      draw();
-
-      turn = true;
-      finalCountDown += 1;     // do ~ do ~ do ~ dooo ~ do ~ do ~ do ~ do ~ dooo
-    }
-  });
-
-  $('.box').hover(
-    function() {
-      $(this).addClass('hover');     // Changes colour on hover.
-    },
-    function(){
-      $(this).removeClass('hover');
-    }
-  );
-
- function declareWinner(){
-   if(xWins === true){
-     $('h3').text('Dog Wins!');
-   }
-   else if (oWins === true){
-     $('h3').text('Cat Wins!');
-   }
- }
-
-});
-
-function didXWin() {
-  if( $('.topLeft').text() === "X"    &&  $('.topMiddle').text() === "X"     &&  $('.topRight').text() === "X"     ||    // broke them into 2 because i wanted my win messages to say "X wins Horizontally etc."
-      $('.middleLeft').text() === "X" &&  $('.middleMiddle').text() === "X"  &&  $('.middleRight').text() === "X"  ||    // X wins X  - i want to refactor this have to think harder.
-      $('.bottomLeft').text() === "X" &&  $('.bottomMiddle').text() === "X"  &&  $('.bottomRight').text() === "X"  ||
-      $('.topLeft').text() === "X"    &&  $('.middleMiddle').text() === "X"  &&  $('.bottomRight').text() === "X" ) {    // X diagonal
-
-        console.log('boo');
-        xWins = true;
-
-      }
-
-                                                                                                                                                                                                                                                                                           //    O
-  else if( $('.topLeft').text() === "X"   &&  $('.middleLeft').text()   === "X"  &&  $('.bottomLeft').text() === "X"   ||
-           $('.topMiddle').text() === "X" &&  $('.middleMiddle').text() === "X"  &&  $('.bottomMiddle').text() === "X" ||   // X wins Y
-           $('.topRight').text() === "X"  &&  $('.middleRight').text()  === "X"  &&  $('.bottomRight').text() === "X"  ||                                                                                                                                                                  //    O
-           $('.topRight').text() === "X"  &&  $('.middleMiddle').text()  === "X" &&  $('.bottomLeft').text() === "X" ) {    // X diagonal
-
-
-             console.log('boo');
-             xWins = true;
-
-           }
-}
-
-function didOWin() {
-  if( $('.topLeft').text() === "O"    &&  $('.topMiddle').text() === "O"    &&  $('.topRight').text() === "O"      ||
-      $('.middleLeft').text() === "O" &&  $('.middleMiddle').text() === "O" &&  $('.middleRight').text() === "O"   ||    // O wins X  - i want to refactor this have to think harder.
-      $('.bottomLeft').text() === "O" &&  $('.bottomMiddle').text() === "O"  &&  $('.bottomRight').text() === "O"   ||
-      $('.topLeft').text() === "O"    &&  $('.middleMiddle').text() === "O" &&  $('.bottomRight').text() === "O")  {    // O diagonal
-
-        console.log('boo');
-        oWins = true;
-
-   }
-
-                                                                                                                                                                                                                                                                                           //    O
-  else if( $('.topLeft').text() === "O"   &&  $('.middleLeft').text()   === "O"  &&  $('.bottomLeft').text() === "O"   ||  // O wins Y
-           $('.topMiddle').text() === "O" &&  $('.middleMiddle').text() === "O"  &&  $('.bottomMiddle').text() === "O"  ||
-           $('.topRight').text() === "O"  &&  $('.middleRight').text()  === "O"  &&  $('.bottomRight').text() === "O"  ||     // super ugly                                                                                                                                                             //    O
-           $('.topRight').text() === "O"  &&  $('.middleMiddle').text()  === "O"  &&  $('.bottomLeft').text() === "O")  {    // O diagonal
-
-           console.log('boo');
-           oWins = true;
-
-  }
-
-
-}
-
-function draw(){
-  if (finalCountDown === 8 && xWins === false && oWins === false){
-    alert('DRAW');
-  }
-}
-
-
-
 var $board;
-var whoWon;
 var turn = true;
 var draw = 0;
 
-$('.box').on('click', function(){
+
+$(document).ready(function(e) {
+
+
+  $('.box').one('click', function(e){     // alternates players
+
+    if(turn === true){
+      $(this).addClass('dog');
+      $(this).text("X");
+      setBoard();
+      winner();
+      turn = false;
+
+    }
+
+    else {
+      $(this).addClass('cat');
+      $(this).text("O");
+      setBoard();
+      winner();
+      turn = true;
+    }
+   draw++;
+
+ });
+
+$('.box').hover(
+  function() {
+    $(this).addClass('hover');     // Changes colour on hover.
+  },
+  function(){
+    $(this).removeClass('hover');
+});
+
+//  $('.ok').on('click', function reset(){       // reset button  incredibly buggy and i can't explain why gonna ask in class.
+//    $board = [];
+//    draw = 0;
+
+//  turn = true;
+
+//   $('.box').text('');
+//   $('.box').removeClass('dog');
+//   $('.box').removeClass('cat');
+//   ok();     // resets one.('click')
+
+//});
 
 });
- function setBoard() {
+
+
+function setBoard() {
    $board = [  [ $('.topLeft').text(), $('.topMiddle').text(), $('.topRight').text()] ,               //Top Horizontal
                [ $('.middleLeft').text(), $('.middleMiddle').text(), $('.middleRight').text()] ,     //Middle Horizontal
                [ $('.bottomLeft').text(), $('.bottomMiddle').text(), $('.bottomRight').text()] ,    //Bottom Horizontal
                [ $('.topLeft').text(), $('.middleLeft').text(), $('.bottomLeft').text()] ,          //Left Vertical
                [ $('.topMiddle').text(), $('.middleMiddle').text(), $('.bottomMiddle').text()] ,    //Middle Vertical
                [ $('.topRight').text(), $('.middleRight').text(), $('.bottomRight').text()],        //Right Vertical
-               [ $('.topLeft').text(), $('.middleMiddle').text(), $('.bottomRight').text()],        // Diagonal
-               [ $('.topRight').text(), $('.middleMiddle').text(), $('.topLeft').text()]            // Diagonal
+               [ $('.topLeft').text(), $('.middleMiddle').text(), $('.bottomRight').text()],        // Left to Right Diagonal
+               [ $('.topRight').text(), $('.middleMiddle').text(), $('.bottomLeft').text()]            // Right to Left Diagonal
             ];
 }
 
 function winner() {
-$board.forEach(function(e){
- if(e === "O", "O", "O"){
-   $('h3').text('Cat Wins!');
- }                                      // I don't think forEach is the right thing to use here. It works for now though.
- else if(e === "X", "X", "X"){
-   $('h3').text('Dog Wins!');
- }
-});
+for(var i = 0; i < $board.length; i++){
+    var whoWon = $board[i].toString();
+      if(whoWon === "X,X,X"){
+        console.log(whoWon);
+        $('h3').text("Dog Wins!");
+
+      }
+      else if(whoWon === "O,O,O"){
+        console.log(whoWon);
+        $('h3').text("Cat wins!");
+
+      }
+      else if((draw === 8 && whoWon !== "X,X,X") || (draw === 8 && whoWon !== "O,O,O")){
+        $('h3').text("Draw!");
+
+      }
+    }
+
 }
