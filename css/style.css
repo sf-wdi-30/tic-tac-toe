@@ -16,7 +16,8 @@ h1{
 }
 
 .head {
-  font-family: cursive; sans-serrif;
+  font-family: 'Mr Bedfort', cursive;
+  font-weight: bold;
 }
 
 .form {
