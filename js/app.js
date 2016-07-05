@@ -40,6 +40,18 @@ $(document).ready(function() {
     };
 
 
+    boardCheck = function () {
+        a1 = $('#a1').html();
+        a2 = $('#a2').html();
+        a3 = $('#a3').html();
+        b1 = $('#b1').html();
+        b2 = $('#b2').html();
+        b3 = $('#b3').html();
+        c1 = $('#c1').html();
+        c2 = $('#c2').html();
+        c3 = $('#c3').html();
+    };
+
 
 
 });
