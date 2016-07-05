@@ -102,6 +102,20 @@ $(document).ready(function() {
         };
 
 
-
-
+        //new game button
+          var clearBoard = $('#restart').click(function (event) {
+              a1 = $('#a1').text("");
+              b1 = $('#b1').text("");
+              c1 = $('#c1').text("");
+              a2 = $('#a2').text("");
+              b2 = $('#b2').text("");
+              c2 = $('#c2').text("");
+              a3 = $('#a3').text("");
+              b3 = $('#b3').text("");
+              c3 = $('#c3').text("");
+              xWins = false;
+              oWins = false;
+              newGame();
+          });
+        });
 });
