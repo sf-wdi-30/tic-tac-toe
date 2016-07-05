@@ -22,11 +22,19 @@ var player = 1;
       }
     }
   });
+$('.button').click(function(){
+$('.box').html('');
+$('.box').removeClass('box');
+return ('.box');
 });
 
-$('.reset').click(function() {
-  reset(table);
 });
+
+
+
+//$('.reset').click(function() {
+  //reset(table);
+//});
 //function winningCombo(winner){
   //if($('.1').hasClass(winner) && $('.2').hasClass(winner) && $('.3').hasClass(winner)){
     //return true;
