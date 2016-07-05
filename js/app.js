@@ -31,27 +31,34 @@ function checkWin(condition) {
     var testString = testArray.toString();
     //setup variable with contents of overlay
     var overlay = jQuery('<div class="overlay"><h1 class="winnerMessage"></h1><br class="beforeImg"></div>');
-    if (testString === "x,x,x") {
+    //postWin is normal procedure after win
+    function postWin() {
+      //prevents further clicks
       $('#board div div').addClass("filled");
+      //resets turn counter
       turnCounter=0;
+      //game win var set to 1
       gameWon=1;
+      //clears alert display to ready for overlay
       $('.alertDisplay').text(" ");
+      //adds overlay
       overlay.appendTo(document.body);
+    }
+    if (testString === "x,x,x") {
+      postWin();
+      //adds personalized win message
       $('.winnerMessage').html("JAY-Z AND PLAYER X WIN! <br><br> TAKE YOUR ASS TO RED LOBSTER!");
+      //adds celebratory gif
       $( ".beforeImg" ).after("<img class='overlayGif' src='img/jayBow.gif'>");
     }
     else if (testString === "o,o,o") {
-      $('#board div div').addClass("filled");
-      turnCounter=0;
-      gameWon=1;
-      $('.alertDisplay').text(" ");
-      overlay.appendTo(document.body);
+      postWin();
       $('.winnerMessage').html("WHO RUNS THE WORLD? <br><br> BEYONCÉ AND PLAYER O!");
       $( ".beforeImg" ).after("<img class='overlayGif' src='img/beyonceDance.gif'>");
     }
-      else {
-        //sanity check
-        console.log("NOPE");
+    else {
+      //sanity check
+      console.log("NOPE");
     }
   }
 
