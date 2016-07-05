@@ -1,6 +1,6 @@
 body {
   background-color: black;
-  color:#f4c0d7;;
+  color:#f4c0d7;
   font-family: 'Oswald', sans-serif;
   text-align: center;
 }
@@ -31,6 +31,9 @@ h1 {
   max-height: 30em;
   position:relative;
   left:-25%;
+  bottom:-25%;
+  margin:0;
+  padding:0;
 }
 
 button {
@@ -39,6 +42,10 @@ button {
 
 #board {
   margin-top: 10px;
+}
+
+#beyonceText {
+
 }
 
 .box {
