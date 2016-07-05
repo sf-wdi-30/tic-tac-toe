@@ -22,7 +22,7 @@ var player = 1;
               }
           } else {
             boxClicked.addClass("oh"); //player O
-            if (checkWin("ex")) {
+            if (checkWin("oh")) {
                 alert("Winner!");
             } else {
               player = 1; //if not won.. pass to player 1... (does this make sense?)
