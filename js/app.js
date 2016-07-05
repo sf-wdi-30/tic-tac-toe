@@ -9,9 +9,7 @@ $(document).ready(function() {
   var tacoCat = '<img src="tacocat.png" height="150px" width="150px">';
   var pizzaCat = '<img src="pizzacat.png" height="150px" width="150px">';
   var $gridSpace = $('.box');
-
-
-  var winPosition = [
+  var winPositions = [
     [0,1,2],
     [3,4,5],
     [6,7,8],
@@ -21,13 +19,14 @@ $(document).ready(function() {
     [0,4,8],
     [2,4,6],
   ];
-
   var occupiedPosition = {
     'x': [],
     'o': []
   };
 
+
   var playingNow = 'x';
+
 
   $gridSpace.on("click", function(){
     var $selectBox = $(this);
@@ -44,13 +43,19 @@ $(document).ready(function() {
     } else if ($selectBox.html()!=="") {
       alert ('occupied by another cat');
     }
+    var indexOfBox = $('.box').index($(this));
+    // alert (indexOfBox);
+    var currentBox = occupiedPosition[playingNow];
+    currentBox.push(indexOfBox);
+    // alert (console.log(occupiedPosition));
   });
+  //
+  // Record player's choice -> match to the winning combination -> if match then win
+
 
 
   // New Game
-    $('.reset').on("click", function(){
-      $('.btn').append('');
-    });
-
-
+  $('.reset').on("click", function(){
+    $('.btn').append('');
+  });
 });
