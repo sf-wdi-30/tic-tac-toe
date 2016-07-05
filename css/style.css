@@ -24,14 +24,15 @@ h1 {
 }
 
 .beyonceDiv {
-
+  padding:0px;
+  margin:0px;
 }
 
 .beyonce {
   max-height: 30em;
   position:relative;
-  left:-25%;
-  bottom:-25%;
+  left:-20%;
+  bottom:-20%;
   margin:0;
   padding:0;
 }
@@ -40,12 +41,18 @@ button {
   margin:0, auto;
 }
 
+img {
+  padding:0px;
+  margin:0px;
+}
+
 #board {
   margin-top: 10px;
 }
 
 #beyonceText {
-  color:#5200ff;
+  /*color:#5200ff;*/
+  color:#e1152d;
 }
 
 .box {
