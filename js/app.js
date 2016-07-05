@@ -4,18 +4,15 @@ $(document).ready(function() {
   // goes inside this function
   console.log("JS is linked to html!");
 
-  var originalState = $('.box').html();
-
   // create default message text
-  $('#message').text("Current player is: X");
-  // set player = 'X'
-  startGame();
+  $('#message').text("Current player is: " + player);
+
   // create event listener for box click
   $(".box").on("click", function handleClick(event) {
     if ($(this).html()==='') {
       $(this).addClass('checked');
       $(this).html(player);
-      nextTurn();
+      switchPlayer();
     }
     else {
       alert("box is filled!");
@@ -29,74 +26,41 @@ $(document).ready(function() {
       $(this).html('');
       $(this).removeClass('checked');
     });
+    player = 'X';
+    $('#message').text("Current player is: " + player);
   });
-
 });
+
+var player = 'X';
 
 // set variable for all jQuery boxes
 var $boxes = $('.box');
 
-var $box0 = $boxes.eq(0);
-var $box1 = $boxes.eq(1);
-var $box2 = $boxes.eq(2);
-
-var $box3 = $boxes.eq(3);
-var $box4 = $boxes.eq(4);
-var $box5 = $boxes.eq(5);
-var $box6 = $boxes.eq(6);
-var $box7 = $boxes.eq(7);
-var $box8 = $boxes.eq(8);
-
-var player = '';
-function startGame() {
-  player = 'X';
-} // set player
-
 // switch player
-function nextTurn() {
+function switchPlayer() {
   if (player === 'X') {
     player = 'O';
-  } else {
+  } else if (player === 'O'){
     player = 'X';
+  } else {
+    alert("Something went wrong! No such player as " + player);
   }
-  // console.log("player is: " + player);
   $('#message').text("Current player is: " + player);
 }
 
 function allThreeEqual(player, boxSet) {
-  // console.log(boxSet[0].html(), player);
   return (boxSet[0].html()===player) && (boxSet[1].html()===player) && (boxSet[2].html()===player);
 }
 
-// var foo = $boxes.eq(0).html();
-// var bar = $boxes.eq(1).html();
-// var baz = $boxes.eq(2).html();
-
 var rowsOfBoxes = [[$boxes.eq(0), $boxes.eq(1), $boxes.eq(2)],
                    [$boxes.eq(3), $boxes.eq(4), $boxes.eq(5)],
-                   [$boxes.eq(6), $boxes.eq(7), $boxes.eq(8)]];
-
+                   [$boxes.eq(6), $boxes.eq(7), $boxes.eq(8)],];
 
 function checkAllRows() {
   for (var i = 0; i < rowsOfBoxes.length; i++) {
     if (allThreeEqual(player, rowsOfBoxes[i])) {
       return true;
     }
-    console.log(i);
   }
   return false;
 }
-allThreeEqual('X', rowsOfBoxes[2]);
-
-// **** check if first box's html is equal to player
-// function checkAgainstPlayer(player) {
-//   return $boxes.eq(0).html()===player;
-// }
-
-// check if each box in $boxes has html equal to player
-var $firstRowBoxes = $('.box').slice(0,3);
-
-$firstRowBoxes.each(function(i) {
-  // if ($boxes.eq(i).html()===player);
-  console.log($firstRowBoxes.eq(i).html());
-});
