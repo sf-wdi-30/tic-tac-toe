@@ -24,47 +24,47 @@ if (boxSelected.hasClass('X') || boxSelected.hasClass('O')) { // if box has been
     // how to determine a winner
     // first row win
     if ($('.box1').hasClass('X') && $('.box2').hasClass('X') && $('.box3').hasClass('X')){
-        alert("X wins!");
+        alert("X wins! Press Reset to Play Again!");
     }else if( $('.box1').hasClass('O') && $('.box2').hasClass('O') && $('.box3').hasClass('O')){
-        alert("O wins!");
+        alert("O wins! Press Reset to Play Again!");
     // second row win
     }if ($('.box4').hasClass('X') && $('.box5').hasClass('X') && $('.box6').hasClass('X')){
-        alert("X wins!");
+        alert("X wins! Press Reset to Play Again!");
     }else if( $('.box4').hasClass('O') && $('.box5').hasClass('O') && $('.box6').hasClass('O')){
-        alert("O wins!");
+        alert("O wins! Press Reset to Play Again!");
     // third row win
     }if ( $('.box7').hasClass('X') && $('.box8').hasClass('X') && $('.box9').hasClass('X')){
-        alert("X wins!");
+        alert("X wins! Press Reset to Play Again!");
     }else if( $('.box7').hasClass('O') && $('.box8').hasClass('O') && $('.box9').hasClass('O')){
-        alert("O wins!");
+        alert("O wins! Press Reset to Play Again!");
     // first column win
     }if ( $('.box1').hasClass('X') && $('.box4').hasClass('X') && $('.box7').hasClass('X')){
-        alert("X wins!");
+        alert("X wins! Press Reset to Play Again!");
     }else if( $('.box1').hasClass('O') && $('.box4').hasClass('O') && $('.box7').hasClass('O')){
-        alert("O wins");
+        alert("O wins! Press Reset to Play Again!");
     // second column win
     }if ( $('.box2').hasClass('X') && $('.box5').hasClass('X') && $('.box8').hasClass('X')){
-        alert("X wins!");
+        alert("X wins! Press Reset to Play Again!");
     }else if ( $('.box2').hasClass('O') && $('.box5').hasClass('O') && $('.box8').hasClass('O')){
-        alert("O wins!");
+        alert("O wins! Press Reset to Play Again!");
     // third column win
     }if ( $('.box3').hasClass('X') && $('.box6').hasClass('X') && $('.box9').hasClass('X')){
-        alert("X wins!");
+        alert("X wins! Press Reset to Play Again!");
     }else if ( $('.box3').hasClass('O') && $('.box6').hasClass('O') && $('.box9').hasClass('O')){
-        alert("O wins!");
+        alert("O wins! Press Reset to Play Again!");
     // first diagonal left to right
     }if ( $('.box1').hasClass('X') && $('.box5').hasClass('X') && $('.box9').hasClass('X')){
-        alert("X wins!");
+        alert("X wins! Press Reset to Play Again!");
     }else if ( $('.box1').hasClass('O') && $('.box5').hasClass('O') && $('.box9').hasClass('O')){
-        alert("O wins!");
+        alert("O wins! Press Reset to Play Again!");
     // second diagonal right to left
     }if ( $('.box3').hasClass('X') && $('.box5').hasClass('X') && $('.box7').hasClass('X')){
-        alert("X wins!");
+        alert("X wins! Press Reset to Play Again!");
     }else if ( $('.box3').hasClass('O') && $('.box5').hasClass('O') && $('.box7').hasClass('O')){
-        alert("O wins!");
+        alert("O wins! Press Reset to Play Again!");
     // add ability to end the game in a draw
     }else if (turnCounter === 9){
-        alert("It's a draw, play again!");
+        alert("It's a draw! Press Reset to Play Again!");
     }
 });
 
