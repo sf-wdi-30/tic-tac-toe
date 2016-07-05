@@ -3,6 +3,34 @@
 }
 
 .box {
-  border: 1px solid black;
+  border: 0.5px solid black;
   height: 150px;
+  text-align: center;
+  vertical-align: middle;
+}
+
+body {
+  background-color: transparent;
+}
+
+div{
+  font-family: 'Permanent Marker', cursive;
+  font-size: 120px;
+
+}
+h1{
+  font-size: 100px;
+  height: 100px;
+  text-align: center;
+}
+html {
+  background-image: url("background.jpg");
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+hr{
+  border-color: gray;
+  width: 600px;
 }
