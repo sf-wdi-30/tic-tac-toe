@@ -61,6 +61,11 @@ img {
 .resetDiv {
     text-align: center;
 }
+.gifButton {
+      margin-top:15%;
+      font-size:3em;
+      background-color:#000000;
+}
 
 .beyonceText {
   color:#e1152d;

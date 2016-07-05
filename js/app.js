@@ -174,6 +174,7 @@ var xIcon = ('url("img/xIcon.png")');
 var oIcon = ('url("img/oIcon.png")');
 var turnCounter = 0;
 var gameWon = 0;
+var gifMode = 0;
 
 //set starting player
 var playerIcon = oIcon;
@@ -191,7 +192,7 @@ $(document).ready(function() {
 displayTurn();
 
   //reset button
-  $('button').on('click', function(event) {
+  $('.reset').on('click', function(event) {
     $("div").css('background-image', "");
     $("div").removeClass('filled');
     $("div").attr('title', " ");
@@ -199,6 +200,39 @@ displayTurn();
     turnCounter=0;
     displayTurn();
   });
+//I Love GIFs button
+$('.gifButton').on('click', function(event) {
+  if (gifMode===0) {
+    console.log(gifMode);
+  $("div").css('background-image', "");
+  $("div").removeClass('filled');
+  $("div").attr('title', " ");
+  gameWon=0;
+  turnCounter=0;
+  displayTurn();
+  $('.box').css('background-size', '100%');
+  oIcon = ('url("img/beyonce.gif")');
+  xIcon = ('url("img/jay.gif")');
+  gifMode=1;
+  playerIcon = oIcon;
+  $(this).html("I HATE GIFS");
+  }
+    else {
+    console.log(gifMode);
+  $("div").css('background-image', "");
+  $("div").removeClass('filled');
+  $("div").attr('title', " ");
+  gameWon=0;
+  turnCounter=0;
+  displayTurn();
+  $('.box').css('background-size', '60%');
+  oIcon = ('url("img/oIcon.png")');
+  xIcon = ('url("img/xIcon.png")');
+  playerIcon = oIcon;
+  gifMode=0;
+  $(this).html("I &#9829; GIFs");
+  }
+});
 
 //draw event
   $('#board').on('click', "div div", function(event) {
