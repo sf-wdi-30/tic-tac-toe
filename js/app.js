@@ -88,6 +88,20 @@ $(document).ready(function() {
         };
 
 
+        //winner
+        var winAlert = function () {
+            if (xWins === true) {
+                alert("X Wins!");
+                clearBoard();
+            } else {
+                if (oWins === true) {
+                    alert("O Wins!");
+                    clearBoard();
+                }
+            }
+        };
+
+
 
 
 });
