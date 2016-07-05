@@ -5,7 +5,7 @@ var boxesRow2 = [".box1", ".box4", ".box7", ".box4", ".box4", ".box3", ".box4", 
 var boxesRow3 = [".box2", ".box5", ".box8", ".box6", ".box8", ".box6", ".box7", ".box8"];
 
 function winChecker(){ // win check function made outside of engine
-  for(i=0; i<9 ;i++)
+  for(i=0; i<9 ;i++){
     if ($(boxesRow1[i]).val() === "O" && $(boxesRow2[i]).val() === "O" && $(boxesRow3[i]).val() === "O"){
       alert("O wins!");
       return true;
@@ -14,6 +14,7 @@ function winChecker(){ // win check function made outside of engine
       alert("X wins!");
       return true;
     }
+  }
 }
 $(document).ready(function() {
 //   // all code to manipulate the DOM
@@ -43,7 +44,7 @@ $(document).ready(function() {
 
           $(this).addClass("took"); // adds took class to the square most recently played
       //winChecker();
-      turnCounter++; // moved turn counter incrementer 
+      turnCounter++; // moved turn counter incrementer
         if(winChecker()){ // conditional statement checking for win or draw. if either is true execution will stop
           return true;
         }
