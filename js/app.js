@@ -13,50 +13,61 @@ var player = 1;
       markedBoxes('X') !== markedBoxes('O'); //this stops from switching colors.
     }else{
       if(player === 1){
-        markedBoxes.addClass('X');
+        markedBoxes.addClass('X');//this marks boxes x.
         player = 2;
       }else{
-        markedBoxes.addClass('O');
+        markedBoxes.addClass('O');//this marks boxes o.
 
       player = 1;//So that it alternates image and player.  If not will stay on the second players img and turn.
       }
     }
   });
-$('.button').click(function(){
-$('.box').html('');
-$('.box').removeClass('box');
-return ('.box');
-});
-
+$('.btn').click(function(){
+  $('.box').removeClass('X');
+  $('.box').removeClass('O');
 });
 
 
+});
 
-//$('.reset').click(function() {
-  //reset(table);
-//});
-//function winningCombo(winner){
-  //if($('.1').hasClass(winner) && $('.2').hasClass(winner) && $('.3').hasClass(winner)){
-    //return true;
-    //}else if($('.1').hasClass(winner) && $('.2').hasClass(winner) && $('.3').hasClass(winner)){
-      //return true;
-    //}else if($('.4').hasClass(winner) && $('.5').hasClass(winner) && $('.6').hasClass(winner)){
-      //return true;
-    //}else if($('.7').hasClass(winner) && $('.8').hasClass(winner) && $('.9').hasClass(winner)){
-      //return true;
-    //}else if($('.1').hasClass(winner) && $('.4').hasClass(winner) && $('.7').hasClass(winner)){
-      //return true;
-    //}else if($('.2').hasClass(winner) && $('.5').hasClass(winner) && $('.8').hasClass(winner)){
-      //return true;
-    //}else if($('.3').hasClass(winner) && $('.6').hasClass(player) && $('.9').hasClass(winner)){
-      //return true;
-    //}else if($('.1').hasClass(winner) && $('.5').hasClass(player) && $('.9').hasClass(winner)){
-      //return true;
-    //}else if($('.3').hasClass(winner) && $('.5').hasClass(player) && $('.7').hasClass(winner)){
-      //return true;
-    //}else{
-      //return false;
-    //}
+// }else{
+//   if(player === 1){
+//     markedBoxes.addClass('X');
+//     if(winningCombo('X')){
+//     alert("Player 1 wins")
+//     }else{
+//     player = 2;
+//     }
+//   }else{
+//     markedBoxes.addClass('O');
+//     if(winningCombo('O')){
+//     alert("Player 2 wins")
+//     }else{
+//     player = 1;
+//
+// function winningCombo(winner){
+//   if($('.1').hasClass(winner) && $('.2').hasClass(winner) && $('.3').hasClass(winner)){
+//     return true;
+//     }else if($('.1').hasClass(winner) && $('.2').hasClass(winner) && $('.3').hasClass(winner)){
+//       return true;
+//     }else if($('.4').hasClass(winner) && $('.5').hasClass(winner) && $('.6').hasClass(winner)){
+//       return true;
+//     }else if($('.7').hasClass(winner) && $('.8').hasClass(winner) && $('.9').hasClass(winner)){
+//       return true;
+//     }else if($('.1').hasClass(winner) && $('.4').hasClass(winner) && $('.7').hasClass(winner)){
+//       return true;
+//     }else if($('.2').hasClass(winner) && $('.5').hasClass(winner) && $('.8').hasClass(winner)){
+//       return true;
+//     }else if($('.3').hasClass(winner) && $('.6').hasClass(player) && $('.9').hasClass(winner)){
+//       return true;
+//     }else if($('.1').hasClass(winner) && $('.5').hasClass(player) && $('.9').hasClass(winner)){
+//         return true;
+//     }else if($('.3').hasClass(winner) && $('.5').hasClass(player) && $('.7').hasClass(winner)){
+//           return true;
+//     }else{
+//       return false;
+//     }
+
 
 
 
