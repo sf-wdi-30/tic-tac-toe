@@ -2,6 +2,14 @@
   margin-top: 10px;
 }
 
+h1 {
+  font-size: 75px;
+}
+
+p{
+  font-size: 30px;
+}
+
 body {
   font-family: 'Chewy', cursive;
   text-align: center;
@@ -19,9 +27,19 @@ body {
   border: 2px dashed black;
   height: 150px;
   background-color: white;
+  cursor: pointer;
 }
 
 .row.text-center {
   background-color: white;
+  border: 5px solid black;
+  padding: none;
+}
 
+.X {
+  background-color: blue;
+}
+
+.O {
+  background-color: green;
 }
