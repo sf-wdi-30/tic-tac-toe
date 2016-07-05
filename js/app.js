@@ -267,7 +267,7 @@ $('.gifButton').on('click', function(event) {
   else {
     displayTurn();
   if (turnCounter===9) {
-    alert("Cat's Game!");
+    $('.alertDisplay').text("It's a draw!");
   }
 }
   console.log("done");
