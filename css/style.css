@@ -3,6 +3,28 @@
 }
 
 .box {
+  padding:0;
   border: 1px solid black;
   height: 150px;
+  color:white;
+}
+
+body {
+  /*background-color:rgb(190,190,190);*/
+}
+
+img {
+  margin:0;
+  padding:0;
+  height:150px;
+  width:160px;
+}
+
+.checked {
+  background-color: blue;
+}
+
+.rick {
+  background-image: url('img/rick.jpeg');
+  background-size: contain;
 }
