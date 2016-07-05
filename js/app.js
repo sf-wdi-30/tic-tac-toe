@@ -62,7 +62,7 @@ function checkWin(condition) {
     }
   }
 
-//function that switches players' turns
+//function that displays players' turns
 function displayTurn() {
   if (playerIcon === oIcon) {
     $('.alertDisplay').text("Player O's Turn");
@@ -72,43 +72,40 @@ function displayTurn() {
   }
 }
 
+//resets many of the variables repeated in reset calls later
+function fullReset() {
+  $(".overlay").remove();
+  $("div").css('background-image', "");
+  $("div").removeClass('filled');
+  $("div").attr('title', " ");
+  gameWon=0;
+  turnCounter=0;
+  //ensures O starts each round, because Beyonce is #1
+  playerIcon = oIcon;
+  displayTurn();
+}
+
 //on document load main function
 $(document).ready(function() {
   //display turn to fill alertDisplay
   displayTurn();
   //reset button
   $('.reset').on('click', function(event) {
-    $(".overlay").remove();
-    $("div").css('background-image', "");
-    $("div").removeClass('filled');
-    $("div").attr('title', " ");
-    gameWon=0;
-    turnCounter=0;
-    displayTurn();
+    fullReset();
   });
 //I Love GIFs button
 $('.gifButton').on('click', function(event) {
   if (gifMode===0) {
-    $("div").css('background-image', "");
-    $("div").removeClass('filled');
-    $("div").attr('title', " ");
-    gameWon=0;
-    turnCounter=0;
-    displayTurn();
+    fullReset();
     $('.box').css('background-size', '100%');
     oIcon = ('url("img/beyonce.gif")');
     xIcon = ('url("img/jay.gif")');
-    gifMode=1;
     playerIcon = oIcon;
+    gifMode=1;
     $(this).html("I HATE GIFS");
   }
   else {
-    $("div").css('background-image', "");
-    $("div").removeClass('filled');
-    $("div").attr('title', " ");
-    gameWon=0;
-    turnCounter=0;
-    displayTurn();
+    fullReset();
     $('.box').css('background-size', '60%');
     oIcon = ('url("img/oIcon.png")');
     xIcon = ('url("img/xIcon.png")');
