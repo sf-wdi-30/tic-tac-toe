@@ -3,7 +3,11 @@ $(document).ready(function() {
   // all code to manipulate the DOM
   // goes inside this function
   alert("JS is linked to html!");
+
+  $('#message').text("Current player is: X");
+
   startGame();
+
   $(".box").on("click", function handleClick(event) {
     if ($(this).html()==='') {
       $(this).addClass('checked');
@@ -14,10 +18,20 @@ $(document).ready(function() {
       alert("box is filled!");
     }
   });
+  $('#board').append('<input type="reset" value="Reset">').addClass('text-center');
+
 
 });
 
+// set variable for all jQuery boxes
 var $boxes = $('.box');
+// set event listener to handle reset button
+$('input').on("click", function handleReset(event) {
+  $('.box').each(function() {
+    $(this).html('');
+  });
+});
+
 var $box0 = $boxes.eq(0);
 var $box1 = $boxes.eq(1);
 var $box2 = $boxes.eq(2);
@@ -30,22 +44,19 @@ var $box7 = $boxes.eq(7);
 var $box8 = $boxes.eq(8);
 
 var player = '';
-var turnCounter = 0;
 function startGame() {
-  player = 'x';
+  player = 'X';
 } // set player
 
 // switch player
 function nextTurn() {
-  if (player === 'x') {
-    player = 'o';
-    turnCounter++;
+  if (player === 'X') {
+    player = 'O';
   } else {
-    player = 'x';
-    turnCounter++;
+    player = 'X';
   }
-  console.log("player is: " + player);
-  console.log("turns: " + turnCounter);
+  // console.log("player is: " + player);
+  $('#message').text("Current player is: " + player);
 }
 
 function allThreeEqual(player, boxSet) {
@@ -61,9 +72,6 @@ var rowsOfBoxes = [[$boxes.eq(0), $boxes.eq(1), $boxes.eq(2)],
                    [$boxes.eq(3), $boxes.eq(4), $boxes.eq(5)],
                    [$boxes.eq(6), $boxes.eq(7), $boxes.eq(8)]];
 
-// TODO: Write a function that for each boxSet in rowsOfBoxes
-//       returns true if any of the boxSets have allThreeEqual to the player.
-// HINT: You'll need a loop.
 
 function checkAllRows() {
   for (var i = 0; i < rowsOfBoxes.length; i++) {
@@ -74,7 +82,7 @@ function checkAllRows() {
   }
   return false;
 }
-allThreeEqual('x', rowsOfBoxes[2]);
+allThreeEqual('X', rowsOfBoxes[2]);
 
 // **** check if first box's html is equal to player
 // function checkAgainstPlayer(player) {
