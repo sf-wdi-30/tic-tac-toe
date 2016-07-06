@@ -1,3 +1,8 @@
+h1 {
+  color: white;
+  text-shadow: 0 0 2px;
+}
+
 #board {
   margin-top: 10px;
 }
@@ -5,4 +10,23 @@
 .box {
   border: 1px solid black;
   height: 150px;
+  /*background:url("http://images.follownews.com/1455/1455152/donald-trump-just-made-funny-faces-with-a-water-bottle-and-yelled-its-rubio_1.jpg");*/
+
+
+  background-size: cover;
+  background-position: center;
+}
+/*.box {
+  border: 1px solid black;
+  height: 150px;
+
+  background:url("http://images.follownews.com/1455/1455152/donald-trump-just-made-funny-faces-with-a-water-bottle-and-yelled-its-rubio_1.jpg");
+  background-size: cover;
+  background-position: center;
+}*/
+
+#election {
+  background-image: url(../2016election.jpg);
+  background-size: contain;
+  background-position: center;
 }
