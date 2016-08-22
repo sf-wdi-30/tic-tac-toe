@@ -9,17 +9,22 @@ $(document).ready(function() {
 
 
   function changePlayer() {
-  if (turn === "X") {
-    turn = "O";
-  } else {
-    turn = "X";
-  }
+    if (turn === "X") {
+      turn = "O";
+    } else {
+      turn = "X";
+    }
 }
 
-  $box.on("click", function handleClick() {
-      $(this).append(turn);
-      changePlayer();
-  });
+
+$box.on("click", function handleClick() {
+  if ($(this).text() === "") {
+    $(this).append(turn);
+    changePlayer();
+  }
+});
+
+
 
 
 
