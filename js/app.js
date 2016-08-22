@@ -7,6 +7,11 @@ $(document).ready(function() {
 
   var turn = "X";
 
+$("#restart").on("click", function restartGame() {
+  $(".box").text("");
+
+  turn = "X";
+});
 
   function changePlayer() {
     if (turn === "X") {
